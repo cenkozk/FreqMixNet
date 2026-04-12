@@ -224,7 +224,7 @@
     
     <div class="hero">
       <h1 class="fade d1">NanoRouter<em>schema-in. route-out.</em></h1>
-      <p class="sub fade d2">Semantic function routing at ~15&nbsp;ms. Trained — not hardcoded. Outperforms LLM function-calling with a&nbsp;61× latency advantage.</p>
+      <p class="sub fade d2">Fast semantic function routing. Web&nbsp;&middot; Device&nbsp;&middot; Server.</p>
     </div>
 
 
@@ -469,12 +469,12 @@
     const BIO_TAGS = routesData.bio_tags || ['O'];
 
     const CHIPS = [
-      'kill the fan',
-      'play jazz in the kitchen',
+      'the lights in the living room are too dim',
+      'the room is hot and the fan doesn\'t work',
+      'play me some trendy music',
       'set a 10 minute timer',
-      'activate bedroom lights',
       'start the ac in the office',
-      'put on some rock',
+      'activate bedroom lights',
     ];
     routes.forEach((route, idx) => {
       const shortDesc = route.description.split(/\. /)[0];
@@ -633,24 +633,24 @@
           <span class="latency-badge">${ms} ms</span>
         </div>
         <div class="call-display flash" id="callDisplay">→ ${callStr}</div>
-        ${pe.length ? `<div class="params-row">${pe.map(([k,v])=>`<span class="param-chip"><span>${k}</span>${v}</span>`).join('')}</div>` : ''}
-        <div style="margin-top:8px;font-size:10px;color:var(--dim)">Confidence: ${(bestScore*100).toFixed(1)}%</div>`;
+        ${pe.length ? `<div class="params-row">${pe.map(([k,v])=>`<span class="param-chip"><span>${k}</span>${v}</span>`).join('')}</div>` : ''}`;
 
       setTimeout(() => document.getElementById('callDisplay')?.classList.remove('flash'), 700);
     };
 
     const RANDOM_EXAMPLES = [
+      'the lights in the living room are too dim',
+      'the room is hot and the fan doesn\'t work',
+      'play me some trendy music',
       'kill the fan in the office',
       'play jazz in the kitchen',
       'set a 10 minute timer',
       'activate bedroom lights',
       'start the ac',
-      'put on some rock in the living room',
       'turn off the tv',
       'chill classical music in the bedroom',
       '5 minute egg timer',
       'shut down the bedroom fan',
-      'play pop everywhere',
       'switch on office lights',
     ];
     let _ex = 0;
