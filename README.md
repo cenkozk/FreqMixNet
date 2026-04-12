@@ -1,7 +1,7 @@
 # NanoRouter
 
 [![Inference](https://img.shields.io/badge/Inference-ONNX%20%7C%20Browser%20%7C%20CPU-blueviolet?style=flat-square)]()
-[![Latency](https://img.shields.io/badge/Latency-~10-50ms-green?style=flat-square)]()
+[![Latency](https://img.shields.io/badge/Latency-~10ms-green?style=flat-square)]()
 
 A schema-conditioned API function router. Fine-tune once on your schema, route any natural language query to the correct function and parameters.
 
@@ -18,14 +18,14 @@ Built on `all-MiniLM-L6-v2` (22 MB).
 Both models trained on identical data (45 programmatic examples). Evaluated on unseen natural language phrases.
 
 | Model | Fn% | Latency | Train | Size |
-|---|---|---|---|---|---|
-| **NanoRouter (fine-tuned MiniLM)** | **93.8%** | **9.8 ms** | **17 s** | **91 MB** |
+|---|---|---|---|---|
+| **NanoRouter (fine-tuned MiniLM)** | **93.8%** | **9.8 ms** | **17 s** | **22 MB** |
 | FunctionGemma 270M (LoRA r=8) | 90.6% | 1,431 ms | 769 s | 537 MB |
 
 **vs. FunctionGemma-270M (LoRA):**
 - **146× faster inference** (1,431 ms → 9.8 ms)
 - **46× faster to fine-tune** (769 s → 17 s)
-- **6× smaller** (537 MB → 91 MB)
+- **24× smaller** (537 MB → 22 MB ONNX)
 
 ---
 
