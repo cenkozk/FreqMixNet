@@ -1,0 +1,77 @@
+{
+  "name": "smart_home",
+  "functions": [
+    {
+      "name": "CONTROL_DEVICE",
+      "description": "Turn a smart home device on or off.",
+      "parameters": {
+        "device": {
+          "type": "enum",
+          "lexical": true,
+          "values": ["lights", "fan", "tv", "ac"],
+          "value_descriptions": {
+            "lights": "lights are off too dark cannot see dim room visibility poor pitch black need light lamp bulb ceiling gloomy bright glare hurting eyes",
+            "fan":    "fan spinning cold draft blowing chilly freezing from fan too hot stuffy need air circulation ventilation ceiling fan noise bothering humming",
+            "tv":     "tv screen television watching show movie playing display telly program entertainment something to watch picture on",
+            "ac":     "air conditioning temperature too high sweating hot room humid heat uncomfortable climate too warm need cooling air conditioner hvac"
+          }
+        },
+        "room": {
+          "type": "enum",
+          "lexical": true,
+          "values": ["living_room", "bedroom", "kitchen", "office"],
+          "value_descriptions": {
+            "living_room": "living room sofa couch lounging watching tv guests family gathering common area relaxing sitting area lounge",
+            "bedroom":     "bedroom sleeping going to bed waking up tired resting napping night time morning can't sleep tossing turning",
+            "kitchen":     "kitchen cooking meal making food preparing breakfast eating smell of food stovetop dishes culinary",
+            "office":      "office working at desk studying concentration laptop open reading writing calls meetings focus homework"
+          }
+        },
+        "state": {
+          "type": "enum",
+          "values": ["on", "off"],
+          "value_descriptions": {
+            "on":  "turn on switch on start activate enable launch open power on — too dark too hot stuffy need it want it need heat device required feels uncomfortable",
+            "off": "turn off switch off shut down stop disable kill deactivate close shut off end — too cold bothering me too loud annoying drafty freezing going to sleep done with it quiet please stop it not needed"
+          }
+        }
+      }
+    },
+    {
+      "name": "PLAY_MUSIC",
+      "description": "Play music of a specific genre in a room.",
+      "parameters": {
+        "genre": {
+          "type": "enum",
+          "values": ["jazz", "pop", "rock", "classical"],
+          "value_descriptions": {
+            "jazz":      "jazz smooth mellow relaxing evening chill lounge sophisticated background vibe saxophone trumpet cool",
+            "pop":       "pop upbeat cheerful catchy sing along dance party fun energetic mainstream radio hits",
+            "rock":      "rock loud energetic pumped up electric guitar bold headbanging intense driving workout anthem",
+            "classical": "classical calm peaceful study focus elegant reading concentration symphony orchestra refined soothing piano"
+          }
+        },
+        "room": {
+          "type": "enum",
+          "lexical": true,
+          "values": ["living_room", "bedroom", "kitchen"],
+          "value_descriptions": {
+            "living_room": "living room sofa couch lounge guests relaxing watching",
+            "bedroom":     "bedroom sleeping resting waking up night morning",
+            "kitchen":     "kitchen cooking eating breakfast meal"
+          }
+        }
+      }
+    },
+    {
+      "name": "SET_TIMER",
+      "description": "Set a countdown timer for a number of minutes.",
+      "parameters": {
+        "duration": {
+          "type": "number",
+          "description": "Minutes. Extract from: '10 minutes', '2 hours'=120, '30 seconds'=0.5"
+        }
+      }
+    }
+  ]
+}

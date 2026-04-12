@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NanoRouter — Schema-in. Route-out.</title>
+  <meta name="description"
+    content="Fine-tuned semantic function routing at ~15ms. Outperforms LLM function-calling on accuracy while being 61× faster. Pure edge, no server." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web@1.19.0/dist/ort.min.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #080808;
+      --surface: rgba(12, 12, 12, 0.84);
+      --border: rgba(255, 255, 255, 0.10);
+      --border-hi: rgba(255, 255, 255, 0.18);
+      --text: rgba(255, 255, 255, 0.88);
+      --muted: rgba(255, 255, 255, 0.42);
+      --dim: rgba(255, 255, 255, 0.20);
+      --accent: #ffffff;
+      --green: #4ade80;
+      --amber: #fbbf24;
+      --blue: #60a5fa;
+    }
+
+    html { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; }
+
+    #rays-canvas {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      z-index: 0; pointer-events: none;
+    }
+
+    body {
+      min-height: 100vh; display: flex; flex-direction: column;
+      align-items: center; padding: 60px 24px 80px;
+      position: relative; z-index: 1;
+    }
+
+    @media (max-width: 540px) {
+      body { padding: 28px 14px 48px; }
+      .wrap { gap: 22px; }
+      h1 { font-size: clamp(28px, 11vw, 44px); }
+      .fn-row { flex-direction: column; gap: 4px; }
+      .fn-row-name { min-width: unset; }
+      .demo { padding: 16px; }
+      .input-row { flex-wrap: wrap; }
+      .query-input { min-width: 0; }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .fade { opacity: 0; animation: fadeUp 0.75s cubic-bezier(0.22,1,0.36,1) forwards; }
+    .d1 { animation-delay: 0.05s; } .d2 { animation-delay: 0.18s; }
+    .d3 { animation-delay: 0.30s; } .d4 { animation-delay: 0.44s; }
+    .d5 { animation-delay: 0.56s; }
+
+    .wrap {
+      width: 100%; max-width: 580px; display: flex; flex-direction: column;
+      align-items: center; gap: 36px; text-align: center;
+    }
+
+    /* ── Hero ── */
+    .hero { display: flex; flex-direction: column; align-items: center; gap: 16px; }
+    h1 {
+      font-size: clamp(40px, 9vw, 62px); font-weight: 200;
+      letter-spacing: -0.045em; line-height: 1.05;
+      color: var(--accent); text-shadow: 0 0 80px rgba(255,255,255,0.12);
+    }
+    h1 em {
+      display: block; font-style: italic; color: rgba(255,255,255,0.38);
+      font-weight: 200; font-size: 0.72em; letter-spacing: -0.02em; margin-top: 4px;
+    }
+    .sub {
+      font-size: 14px; font-weight: 300; line-height: 1.75;
+      color: var(--muted); max-width: 400px; text-shadow: 0 1px 12px rgba(0,0,0,0.9);
+    }
+
+    /* ── Card ── */
+    .card {
+      width: 100%; background: var(--surface);
+      border: 1px solid var(--border); border-radius: 18px;
+      backdrop-filter: blur(24px) saturate(1.4);
+      -webkit-backdrop-filter: blur(24px) saturate(1.4);
+      box-shadow: 0 0 0 1px rgba(255,255,255,0.04) inset,
+                  0 8px 40px rgba(0,0,0,0.75), 0 2px 8px rgba(0,0,0,0.5);
+    }
+
+
+
+    /* ── Demo ── */
+    .demo { display: flex; flex-direction: column; gap: 16px; padding: 22px; }
+    .input-row { display: flex; gap: 8px; align-items: center; }
+    .query-input {
+      flex: 1; background: rgba(255,255,255,0.06);
+      border: 1px solid var(--border); border-radius: 10px;
+      padding: 11px 14px; font-size: 13px; font-family: 'Inter', sans-serif;
+      font-weight: 300; color: var(--text); outline: none;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .query-input::placeholder { color: var(--dim); }
+    .query-input:focus { border-color: var(--border-hi); background: rgba(255,255,255,0.08); }
+
+    .icon-btn {
+      padding: 10px 11px; border-radius: 10px;
+      background: rgba(255,255,255,0.06); border: 1px solid var(--border);
+      color: var(--muted); cursor: pointer;
+      transition: background 0.2s, color 0.2s, transform 0.12s;
+      line-height: 0; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .icon-btn:hover { background: rgba(255,255,255,0.11); color: var(--text); }
+    .icon-btn:active { transform: scale(0.92); }
+
+    .route-btn {
+      padding: 11px 18px; border-radius: 10px;
+      background: rgba(255,255,255,0.10); border: 1px solid var(--border-hi);
+      color: var(--text); font-size: 12px; font-weight: 400; cursor: pointer;
+      transition: background 0.2s, transform 0.12s; white-space: nowrap;
+      font-family: 'Inter', sans-serif;
+    }
+    .route-btn:hover { background: rgba(255,255,255,0.16); }
+    .route-btn:active { transform: scale(0.96); }
+
+    .suggestions { display: flex; flex-wrap: wrap; gap: 6px; justify-content: flex-start; }
+    .chip {
+      padding: 5px 12px; border-radius: 99px; border: 1px solid var(--border);
+      font-size: 11px; font-weight: 300; color: var(--muted); cursor: pointer;
+      transition: border-color 0.15s, color 0.15s, background 0.15s;
+      background: rgba(255,255,255,0.03); font-family: 'Inter', sans-serif;
+    }
+    .chip:hover { border-color: var(--border-hi); color: var(--text); background: rgba(255,255,255,0.07); }
+
+    /* ── Result ── */
+    .result-panel {
+      display: flex; flex-direction: column; gap: 10px;
+      padding: 14px 16px; background: rgba(0,0,0,0.35);
+      border: 1px solid var(--border); border-radius: 10px;
+      min-height: 82px; text-align: left; transition: opacity 0.3s;
+    }
+    .result-panel.empty { opacity: 0.45; }
+    .result-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .fn-name { font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 400; color: var(--accent); }
+    .latency-badge {
+      padding: 3px 9px; border-radius: 99px;
+      border: 1px solid rgba(74,222,128,0.30); background: rgba(74,222,128,0.10);
+      font-size: 10px; font-family: 'JetBrains Mono', monospace; color: var(--green); white-space: nowrap;
+    }
+    .params-row { display: flex; flex-wrap: wrap; gap: 6px; }
+    .param-chip {
+      padding: 3px 9px; border-radius: 6px;
+      background: rgba(255,255,255,0.07); border: 1px solid var(--border);
+      font-size: 11px; font-family: 'JetBrains Mono', monospace; color: rgba(255,255,255,0.60);
+    }
+    .param-chip span { color: var(--muted); margin-right: 4px; }
+    .result-empty-msg { font-size: 12px; font-weight: 300; color: var(--dim); font-style: italic; margin: auto; }
+
+    .call-display {
+      font-family: 'JetBrains Mono', monospace; font-size: 12.5px; color: var(--green);
+      background: rgba(74,222,128,0.05); border: 1px solid rgba(74,222,128,0.12);
+      border-radius: 8px; padding: 11px 14px; letter-spacing: 0.02em;
+      word-break: break-all; line-height: 1.6;
+    }
+    @keyframes callFlash {
+      0%   { background: rgba(74,222,128,0.15); border-color: rgba(74,222,128,0.3); }
+      100% { background: rgba(74,222,128,0.05); border-color: rgba(74,222,128,0.12); }
+    }
+    .call-display.flash { animation: callFlash 0.5s ease-out; }
+
+
+
+    /* ── API schema list ── */
+    .api-wrap { width: 100%; display: flex; flex-direction: column; gap: 10px; text-align: left; }
+    .api-label {
+      font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase;
+      font-family: 'JetBrains Mono', monospace; color: var(--dim); margin-bottom: 2px;
+    }
+    .fn-list { display: flex; flex-direction: column; gap: 6px; }
+    .fn-row {
+      display: flex; align-items: flex-start; gap: 12px;
+      padding: 11px 16px; border-radius: 10px; border: 1px solid transparent;
+      cursor: pointer; transition: background 0.15s, border-color 0.15s;
+      background: rgba(255,255,255,0.025);
+    }
+    .fn-row:hover { background: rgba(255,255,255,0.055); border-color: var(--border); }
+    .fn-row-name {
+      font-family: 'JetBrains Mono', monospace; font-size: 11px;
+      color: rgba(255,255,255,0.75); min-width: 160px; flex-shrink: 0; padding-top: 1px;
+    }
+    .fn-row-desc { font-size: 11px; font-weight: 300; color: var(--muted); flex: 1; line-height: 1.5; }
+    .fn-row-params { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 5px; }
+    .fn-enum {
+      padding: 2px 7px; border-radius: 4px;
+      background: rgba(255,255,255,0.05); border: 1px solid var(--border);
+      font-size: 9px; font-family: 'JetBrains Mono', monospace;
+      color: var(--dim); letter-spacing: 0.04em;
+    }
+
+    /* ── Misc ── */
+    .rule { width: 100%; height: 1px; background: linear-gradient(to right, var(--border-hi), transparent); }
+    .footer {
+      font-size: 10px; font-family: 'JetBrains Mono', monospace;
+      letter-spacing: 0.12em; color: var(--dim); text-transform: uppercase;
+      text-shadow: 0 1px 8px rgba(0,0,0,0.9);
+    }
+    .footer a { color: var(--dim); text-decoration: none; transition: color 0.15s; }
+    .footer a:hover { color: var(--muted); }
+
+    @keyframes pulse { 0%, 100% { opacity: 1 } 50% { opacity: 0.35 } }
+    .routing { animation: pulse 0.85s ease-in-out infinite; color: var(--muted); font-style: italic; font-size: 12px; }
+  </style>
+</head>
+
+<body>
+  <canvas id="rays-canvas"></canvas>
+
+  <div class="wrap">
+
+    
+    <div class="hero">
+      <h1 class="fade d1">NanoRouter<em>schema-in. route-out.</em></h1>
+      <p class="sub fade d2">Semantic function routing at ~15&nbsp;ms. Trained — not hardcoded. Outperforms LLM function-calling with a&nbsp;61× latency advantage.</p>
+    </div>
+
+
+
+    
+    <div class="card demo fade d3">
+      <div class="input-row">
+        <input id="queryInput" class="query-input" type="text"
+          placeholder="e.g. kill the fan, play jazz in the kitchen, 10 min timer…"
+          autocomplete="off" />
+        <button class="icon-btn" onclick="doRandom()" title="Random query">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+            stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="3" />
+            <circle cx="8.5" cy="8.5" r="1.3" fill="currentColor" stroke="none" />
+            <circle cx="15.5" cy="8.5" r="1.3" fill="currentColor" stroke="none" />
+            <circle cx="12" cy="12" r="1.3" fill="currentColor" stroke="none" />
+            <circle cx="8.5" cy="15.5" r="1.3" fill="currentColor" stroke="none" />
+            <circle cx="15.5" cy="15.5" r="1.3" fill="currentColor" stroke="none" />
+          </svg>
+        </button>
+        <button id="routeBtn" class="route-btn" onclick="doRoute()" disabled>Loading…</button>
+      </div>
+
+      <div id="modelStatus" style="display:flex;align-items:center;gap:8px;">
+        <div id="modelDot" style="width:5px;height:5px;border-radius:50%;background:var(--amber);flex-shrink:0;"></div>
+        <span id="modelStatusText" style="font-size:10px;font-family:'JetBrains Mono',monospace;color:var(--dim);">Loading…</span>
+        <div id="modelBar" style="flex:1;height:1.5px;background:rgba(255,255,255,0.06);border-radius:2px;overflow:hidden;">
+          <div id="modelProgress" style="height:100%;width:0%;background:rgba(255,255,255,0.25);transition:width 0.2s;"></div>
+        </div>
+      </div>
+
+      
+      <div class="suggestions" id="chips"></div>
+
+      
+      <div class="result-panel empty" id="resultPanel">
+        <p class="result-empty-msg">Result will appear here</p>
+      </div>
+
+
+    </div>
+
+    <div class="rule fade d4"></div>
+
+    
+    <div class="api-wrap fade d4">
+      <p class="api-label">Smart Home API — 3 functions</p>
+      <div class="fn-list" id="fnList"></div>
+    </div>
+
+    
+    <p class="footer fade d5">NanoRouter · <a href="https://github.com/cenkozk/NanoRouter" target="_blank">github</a> · MIT</p>
+
+  </div>
+
+  <script>
+    (function () {
+      const canvas = document.getElementById('rays-canvas');
+      const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+      if (!gl) return;
+      const vert = `attribute vec2 position; void main(){gl_Position=vec4(position,0.,1.);}`;
+      const frag = `
+        precision highp float;
+        uniform float iTime; uniform vec2 iResolution; uniform vec2 rayPos; uniform vec2 rayDir;
+        uniform float raysSpeed; uniform float lightSpread; uniform float rayLength; uniform float fadeDistance;
+        uniform vec2 mousePos; uniform float mouseInfluence;
+        float rs(vec2 src,vec2 rd,vec2 c,float sA,float sB,float sp){
+          vec2 d=c-src; float cs=dot(normalize(d),rd);
+          float sf=pow(max(cs,0.),1./max(lightSpread,.001));
+          float dist=length(d);
+          float lf=clamp((iResolution.x*rayLength-dist)/(iResolution.x*rayLength),0.,1.);
+          float ff=clamp((iResolution.x*fadeDistance-dist)/(iResolution.x*fadeDistance),.5,1.);
+          float base=clamp((.45+.15*sin(cs*sA+iTime*sp))+(.3+.2*cos(-cs*sB+iTime*sp)),0.,1.);
+          return base*lf*ff*sf;
+        }
+        void main(){
+          vec2 coord=vec2(gl_FragCoord.x,iResolution.y-gl_FragCoord.y);
+          vec2 dir=rayDir;
+          if(mouseInfluence>0.){vec2 mp=mousePos*iResolution.xy; dir=normalize(mix(rayDir,normalize(mp-rayPos),mouseInfluence));}
+          float r=rs(rayPos,dir,coord,36.22,21.11,1.5*raysSpeed)*.5+rs(rayPos,dir,coord,22.40,18.02,1.1*raysSpeed)*.4;
+          gl_FragColor=vec4(r*.7,r*.7,r*.7,r*.22);
+        }`;
+      function mkS(t, s) { const sh = gl.createShader(t); gl.shaderSource(sh, s); gl.compileShader(sh); return sh; }
+      const prog = gl.createProgram();
+      gl.attachShader(prog, mkS(gl.VERTEX_SHADER, vert));
+      gl.attachShader(prog, mkS(gl.FRAGMENT_SHADER, frag));
+      gl.linkProgram(prog); gl.useProgram(prog);
+      const buf = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1,3,-1,-1,3]), gl.STATIC_DRAW);
+      const p = gl.getAttribLocation(prog, 'position'); gl.enableVertexAttribArray(p); gl.vertexAttribPointer(p, 2, gl.FLOAT, false, 0, 0);
+      const u = {
+        time: gl.getUniformLocation(prog,'iTime'), res: gl.getUniformLocation(prog,'iResolution'),
+        rp: gl.getUniformLocation(prog,'rayPos'), rd: gl.getUniformLocation(prog,'rayDir'),
+        sp: gl.getUniformLocation(prog,'raysSpeed'), ss: gl.getUniformLocation(prog,'lightSpread'),
+        rl: gl.getUniformLocation(prog,'rayLength'), fd: gl.getUniformLocation(prog,'fadeDistance'),
+        mp: gl.getUniformLocation(prog,'mousePos'), mi: gl.getUniformLocation(prog,'mouseInfluence'),
+      };
+      gl.uniform1f(u.sp,1); gl.uniform1f(u.ss,0.5); gl.uniform1f(u.rl,3); gl.uniform1f(u.fd,1);
+      gl.uniform1f(u.mi,0.1); gl.uniform2f(u.mp,0.5,0.5);
+      gl.enable(gl.BLEND); gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
+      let mx=0.5, my=0.5, smx=0.5, smy=0.5;
+      window.addEventListener('mousemove', e => { mx=e.clientX/window.innerWidth; my=e.clientY/window.innerHeight; });
+      function resize() {
+        const dpr=Math.min(window.devicePixelRatio,2);
+        canvas.width=window.innerWidth*dpr; canvas.height=window.innerHeight*dpr;
+        gl.viewport(0,0,canvas.width,canvas.height);
+        gl.uniform2f(u.res,canvas.width,canvas.height);
+        gl.uniform2f(u.rp,canvas.width*.5,-canvas.height*.2);
+        gl.uniform2f(u.rd,0,1);
+      }
+      window.addEventListener('resize', resize); resize();
+      function loop(t) {
+        smx=smx*.92+mx*.08; smy=smy*.92+my*.08;
+        gl.uniform1f(u.time,t*.001); gl.uniform2f(u.mp,smx,smy);
+        gl.drawArrays(gl.TRIANGLES,0,3); requestAnimationFrame(loop);
+      }
+      requestAnimationFrame(loop);
+    })();
+
+    const inputEl  = document.getElementById('queryInput');
+    const panelEl  = document.getElementById('resultPanel');
+    const routeBtn = document.getElementById('routeBtn');
+    inputEl.addEventListener('keydown', e => { if (e.key === 'Enter') window.doRoute(); });
+    window.doRoute  = () => {};
+    window.doRandom = () => {};
+  </script>
+
+  
+  <script type="module">
+    const REPO = (location.protocol === 'file:' || location.hostname === 'localhost')
+      ? '.'
+      : 'https://raw.githubusercontent.com/cenkozk/NanoRouter/main';
+
+    const statusDot  = document.getElementById('modelDot');
+    const statusText = document.getElementById('modelStatusText');
+    const progressEl = document.getElementById('modelProgress');
+    const routeBtn   = document.getElementById('routeBtn');
+    const panelEl    = document.getElementById('resultPanel');
+    const inputEl    = document.getElementById('queryInput');
+    const chipsEl    = document.getElementById('chips');
+    const fnListEl   = document.getElementById('fnList');
+
+    function setStatus(msg, color, hide) {
+      statusText.textContent = msg;
+      statusDot.style.background = color;
+      if (hide) document.getElementById('modelStatus').style.display = 'none';
+    }
+
+    class BertTokenizer {
+      constructor(vocab, lowercase, stripAccents) {
+        this.vocab      = vocab;
+        this.revVocab   = new Map([...vocab.entries()].map(([t,id]) => [id,t]));
+        this.lowercase  = lowercase;
+        this.stripAccents = stripAccents;
+        this.CLS = vocab.get('[CLS]') ?? 101;
+        this.SEP = vocab.get('[SEP]') ?? 102;
+        this.PAD = vocab.get('[PAD]') ?? 0;
+        this.UNK = vocab.get('[UNK]') ?? 100;
+      }
+      static async load(url) {
+        const data  = await fetch(url).then(r => r.json());
+        const vocab = new Map(Object.entries(data.model.vocab));
+        const norm  = data.normalizer || {};
+        return new BertTokenizer(vocab, norm.lowercase !== false, norm.strip_accents !== false);
+      }
+      _normalize(text) {
+        text = text.replace(/[\u0000\ufffd]/g, '');
+        text = text.replace(/[\u0001-\u001f\u007f-\u009f]/g, ' ');
+        text = text.replace(/[\u4e00-\u9fff\u3400-\u4dbf\uf900-\ufaff\u2e80-\u2eff\u31c0-\u31ef]/g, ' $& ');
+        if (this.lowercase) text = text.toLowerCase();
+        if (this.stripAccents) text = text.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+        return text;
+      }
+      _isPunct(c) {
+        const cp = c.codePointAt(0);
+        if ((cp>=33&&cp<=47)||(cp>=58&&cp<=64)||(cp>=91&&cp<=96)||(cp>=123&&cp<=126)) return true;
+        return /\p{P}|\p{S}/u.test(c);
+      }
+      _basicTokenize(text) {
+        text = this._normalize(text);
+        const out = []; let cur = '';
+        for (const c of text) {
+          if (/\s/.test(c)) { if (cur) { out.push(cur); cur=''; } }
+          else if (this._isPunct(c)) { if (cur) { out.push(cur); cur=''; } out.push(c); }
+          else cur += c;
+        }
+        if (cur) out.push(cur);
+        return out;
+      }
+      _wordpiece(word) {
+        if (word.length > 100) return [this.UNK];
+        if (this.vocab.has(word)) return [this.vocab.get(word)];
+        const chars=[...word]; const ids=[]; let start=0;
+        while (start < chars.length) {
+          let end=chars.length, found=-1;
+          while (start < end) {
+            const sub=(start>0?'##':'')+chars.slice(start,end).join('');
+            if (this.vocab.has(sub)) { found=this.vocab.get(sub); break; }
+            end--;
+          }
+          if (found===-1) return [this.UNK];
+          ids.push(found); start=end;
+        }
+        return ids;
+      }
+      encode(text, maxLen=64) {
+        const words=this._basicTokenize(text);
+        const ids=[this.CLS];
+        for (const w of words) {
+          ids.push(...this._wordpiece(w));
+          if (ids.length >= maxLen-1) break;
+        }
+        ids.push(this.SEP);
+        const mask=new Array(ids.length).fill(1);
+        while (ids.length < maxLen) { ids.push(this.PAD); mask.push(0); }
+        return { input_ids: ids.slice(0,maxLen), attention_mask: mask.slice(0,maxLen) };
+      }
+    }
+
+    ort.env.wasm.wasmPaths = 'https://cdn.jsdelivr.net/npm/onnxruntime-web@1.19.0/dist/';
+
+    setStatus('Loading…', 'var(--amber)');
+    const tokenizer = await BertTokenizer.load(`${REPO}/tokenizer.json`);
+
+    const resp = await fetch(`${REPO}/nanorouter.onnx`);
+    const total = +resp.headers.get('Content-Length') || 0;
+    const reader = resp.body.getReader();
+    const chunks = []; let received = 0;
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      chunks.push(value); received += value.length;
+      if (total) progressEl.style.width = `${Math.round(received/total*100)}%`;
+    }
+    const onnxBuf = new Uint8Array(received);
+    let offset = 0; for (const c of chunks) { onnxBuf.set(c, offset); offset += c.length; }
+    const session = await ort.InferenceSession.create(onnxBuf.buffer);
+    document.getElementById('modelBar').style.display = 'none';
+    const routesData = await fetch(`${REPO}/nanorouter_routes.json`).then(r => r.json());
+    const routes   = routesData.routes;
+    const BIO_TAGS = routesData.bio_tags || ['O'];
+
+    const CHIPS = [
+      'kill the fan',
+      'play jazz in the kitchen',
+      'set a 10 minute timer',
+      'activate bedroom lights',
+      'start the ac in the office',
+      'put on some rock',
+    ];
+    routes.forEach((route, idx) => {
+      const shortDesc = route.description.split(/\. /)[0];
+      const paramEntries = Object.entries(route.parameters || {});
+      const enumsHtml = paramEntries
+        .filter(([, pd]) => pd.values || pd.enum)
+        .map(([k, pd]) => {
+          const vals = (pd.values || pd.enum || []).slice(0, 6);
+          return `<span style="font-size:10px;font-family:'JetBrains Mono',monospace;color:var(--muted);margin-right:4px">${k}:</span>` +
+            vals.map(v => `<span class="fn-enum">${v}</span>`).join('');
+        }).join('<span style="width:8px;display:inline-block"></span>');
+
+      const row = document.createElement('div');
+      row.className = 'fn-row';
+      row.innerHTML = `
+        <span class="fn-row-name">${route.name}</span>
+        <div style="display:flex;flex-direction:column;gap:4px">
+          <span class="fn-row-desc">${shortDesc}</span>
+          ${enumsHtml ? `<div class="fn-row-params">${enumsHtml}</div>` : ''}
+        </div>`;
+      const chip = CHIPS[idx] || shortDesc;
+      row.onclick = () => { inputEl.value = chip; window.doRoute(); };
+      fnListEl.appendChild(row);
+
+      if (idx < CHIPS.length) {
+        const b = document.createElement('button');
+        b.className = 'chip'; b.textContent = CHIPS[idx];
+        b.onclick = () => { inputEl.value = CHIPS[idx]; window.doRoute(); };
+        chipsEl.appendChild(b);
+      }
+    });
+
+    setStatus('Ready', 'var(--green)', true);
+    routeBtn.disabled = false;
+    routeBtn.textContent = 'Route →';
+
+    const DIM = 384;
+    async function embed(text) {
+      const enc  = tokenizer.encode(text);
+      const i64  = arr => new ort.Tensor('int64', BigInt64Array.from(arr.map(BigInt)), [1, arr.length]);
+      const res  = await session.run({ input_ids: i64(enc.input_ids), attention_mask: i64(enc.attention_mask) });
+      const tokTen = res.token_embeddings;
+      const bioTen = res.bio_logits;
+      const seqLen = tokTen.dims[1];
+      return {
+        toks: new Float32Array(tokTen.data), seqLen,
+        bioLogits: bioTen ? new Float32Array(bioTen.data) : null,
+        tokenStrings: enc.input_ids.map(id => tokenizer.revVocab.get(id) ?? '[UNK]'),
+      };
+    }
+
+    function maxsim(qToks, qSeqLen, fnToksList) {
+      let total = 0;
+      for (let j = 1; j < qSeqLen - 1; j++) {
+        const qOff = j * DIM;
+        let qNorm = 0;
+        for (let k = 0; k < DIM; k++) qNorm += qToks[qOff+k] * qToks[qOff+k];
+        qNorm = Math.sqrt(qNorm) + 1e-9;
+        let maxS = -1;
+        for (const fnTok of fnToksList) {
+          let dot = 0, fNorm = 0;
+          for (let k = 0; k < DIM; k++) { dot += qToks[qOff+k]*fnTok[k]; fNorm += fnTok[k]*fnTok[k]; }
+          const s = dot / (qNorm * (Math.sqrt(fNorm) + 1e-9));
+          if (s > maxS) maxS = s;
+        }
+        total += maxS;
+      }
+      return total / Math.max(qSeqLen - 2, 1);
+    }
+
+    function inferDuration(q) {
+      const h = q.match(/(\d+)\s*h(our)?/i); if (h) return parseInt(h[1]) * 60;
+      const s = q.match(/(\d+)\s*s(ec(ond)?)?/i); if (s) return Math.round(parseInt(s[1]) / 60);
+      const m = q.match(/(\d+)/); if (m) return parseInt(m[1]);
+      return 5;
+    }
+
+    
+    function extractParams(query, route, q) {
+      const params = {};
+      const ql = query.toLowerCase();
+
+      for (const [pname, pdef] of Object.entries(route.parameters || {})) {
+        if (pdef.type === 'number') { params[pname] = inferDuration(query); continue; }
+
+        const vals = pdef.values || pdef.enum || [];
+        if (!vals.length) continue;
+
+        let best = null;
+        for (const v of vals) {
+          const word = v.replace(/_/g, ' ');
+          const esc  = word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+          if (new RegExp(`\\b${esc}\\b`, 'i').test(ql)) { best = v; break; }
+        }
+
+        if (!best && !pdef.lexical && pdef.token_embeddings && q) {
+          let bestScore = -Infinity, bestVal = null;
+          for (const [v, tokMat] of Object.entries(pdef.token_embeddings)) {
+            if (!tokMat?.length) continue;
+            const s = maxsim(q.toks, q.seqLen, tokMat);
+            if (s > bestScore) { bestScore = s; bestVal = v; }
+          }
+          best = bestVal;
+        }
+
+        params[pname] = pdef.lexical ? best : (best ?? vals[0]);
+      }
+      return params;
+    }
+
+    const ROOMS = ['living_room','bedroom','kitchen','office'];
+
+    const handlers = {
+      CONTROL_DEVICE({ device, room, state }) {
+        const roomPart = room ? `, "${room}"` : '';
+        return `control_device("${device}"${roomPart}, "${state}")`;
+      },
+      PLAY_MUSIC({ genre, room }) {
+        return `play_music("${genre}"${room ? `, "${room}"` : ''})`;
+      },
+      SET_TIMER({ duration }) {
+        return `set_timer(${duration ?? 5})`;
+      },
+    };
+
+    window.doRoute = async function() {
+      const query = inputEl.value.trim();
+      if (!query) return;
+      panelEl.classList.remove('empty');
+      panelEl.innerHTML = '<p class="routing">routing\u2026</p>';
+
+      const t0 = performance.now();
+      const q  = await embed(query);
+      if (!q || !q.seqLen) {
+        panelEl.innerHTML = '<p style="color:var(--muted)">Model inference failed — check console</p>';
+        return;
+      }
+
+      let best = null, bestScore = -1;
+      for (const route of routes) {
+        const s = maxsim(q.toks, q.seqLen, route.token_embeddings || []);
+        if (s > bestScore) { bestScore = s; best = route; }
+      }
+      const ms = (performance.now() - t0).toFixed(1);
+
+      const params  = extractParams(query, best, q);
+      const handler = handlers[best.name];
+      const callStr = handler
+        ? handler(params)
+        : `${best.name.toLowerCase()}(${Object.entries(params).map(([,v])=>`"${v}"`).join(', ')})`;
+
+      const pe = Object.entries(params).filter(([,v]) => v !== '' && v !== null && v !== undefined);
+      panelEl.innerHTML = `
+        <div class="result-top">
+          <span class="fn-name">${best.name}</span>
+          <span class="latency-badge">${ms} ms</span>
+        </div>
+        <div class="call-display flash" id="callDisplay">→ ${callStr}</div>
+        ${pe.length ? `<div class="params-row">${pe.map(([k,v])=>`<span class="param-chip"><span>${k}</span>${v}</span>`).join('')}</div>` : ''}
+        <div style="margin-top:8px;font-size:10px;color:var(--dim)">Confidence: ${(bestScore*100).toFixed(1)}%</div>`;
+
+      setTimeout(() => document.getElementById('callDisplay')?.classList.remove('flash'), 700);
+    };
+
+    const RANDOM_EXAMPLES = [
+      'kill the fan in the office',
+      'play jazz in the kitchen',
+      'set a 10 minute timer',
+      'activate bedroom lights',
+      'start the ac',
+      'put on some rock in the living room',
+      'turn off the tv',
+      'chill classical music in the bedroom',
+      '5 minute egg timer',
+      'shut down the bedroom fan',
+      'play pop everywhere',
+      'switch on office lights',
+    ];
+    let _ex = 0;
+    window.doRandom = function() {
+      inputEl.value = RANDOM_EXAMPLES[_ex++ % RANDOM_EXAMPLES.length];
+      window.doRoute();
+    };
+  </script>
+</body>
+</html>

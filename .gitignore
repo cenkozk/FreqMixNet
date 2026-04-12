@@ -1,0 +1,14 @@
+*.pt
+__pycache__/
+*.pyc
+*.pyo
+.env
+_test_*.json
+_router_*.pt
+.cache_*.json
+fg_lora_smart_home/
+
+*_fp32.onnx
+*_fp32.onnx.data
+archive/*.json
+archive/*.pt

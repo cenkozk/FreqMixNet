@@ -1,0 +1,39 @@
+[
+  {"query": "turn on the lights in the bedroom",           "label": {"function": "CONTROL_DEVICE", "device": "lights", "room": "bedroom",     "state": "on"}},
+  {"query": "switch off the bedroom lights please",        "label": {"function": "CONTROL_DEVICE", "device": "lights", "room": "bedroom",     "state": "off"}},
+  {"query": "can you get the kitchen lights on",           "label": {"function": "CONTROL_DEVICE", "device": "lights", "room": "kitchen",    "state": "on"}},
+  {"query": "kill the lights in the living room",          "label": {"function": "CONTROL_DEVICE", "device": "lights", "room": "living_room","state": "off"}},
+  {"query": "office lights on",                           "label": {"function": "CONTROL_DEVICE", "device": "lights", "room": "office",     "state": "on"}},
+  {"query": "shut the office lights",                     "label": {"function": "CONTROL_DEVICE", "device": "lights", "room": "office",     "state": "off"}},
+
+  {"query": "start the fan in the kitchen",               "label": {"function": "CONTROL_DEVICE", "device": "fan",    "room": "kitchen",    "state": "on"}},
+  {"query": "close the fan in the bedroom",               "label": {"function": "CONTROL_DEVICE", "device": "fan",    "room": "bedroom",    "state": "off"}},
+  {"query": "it's too hot, turn the living room fan on",  "label": {"function": "CONTROL_DEVICE", "device": "fan",    "room": "living_room","state": "on"}},
+  {"query": "disable the office fan",                     "label": {"function": "CONTROL_DEVICE", "device": "fan",    "room": "office",     "state": "off"}},
+  {"query": "the kitchen fan is too loud, shut it down",  "label": {"function": "CONTROL_DEVICE", "device": "fan",    "room": "kitchen",    "state": "off"}},
+
+  {"query": "open the tv in the living room",             "label": {"function": "CONTROL_DEVICE", "device": "tv",     "room": "living_room","state": "on"}},
+  {"query": "turn off the bedroom tv",                    "label": {"function": "CONTROL_DEVICE", "device": "tv",     "room": "bedroom",    "state": "off"}},
+  {"query": "switch on the kitchen tv",                   "label": {"function": "CONTROL_DEVICE", "device": "tv",     "room": "kitchen",    "state": "on"}},
+  {"query": "can you kill the tv in the office",          "label": {"function": "CONTROL_DEVICE", "device": "tv",     "room": "office",     "state": "off"}},
+
+  {"query": "turn on the ac in the office",               "label": {"function": "CONTROL_DEVICE", "device": "ac",     "room": "office",     "state": "on"}},
+  {"query": "bedroom ac off",                             "label": {"function": "CONTROL_DEVICE", "device": "ac",     "room": "bedroom",    "state": "off"}},
+  {"query": "get the living room AC going",               "label": {"function": "CONTROL_DEVICE", "device": "ac",     "room": "living_room","state": "on"}},
+  {"query": "stop the kitchen air conditioning",          "label": {"function": "CONTROL_DEVICE", "device": "ac",     "room": "kitchen",    "state": "off"}},
+
+  {"query": "play some jazz in the living room",          "label": {"function": "PLAY_MUSIC", "genre": "jazz",      "room": "living_room"}},
+  {"query": "put on jazz in the bedroom",                 "label": {"function": "PLAY_MUSIC", "genre": "jazz",      "room": "bedroom"}},
+  {"query": "play rock in the kitchen",                   "label": {"function": "PLAY_MUSIC", "genre": "rock",      "room": "kitchen"}},
+  {"query": "put on some rock in the living room",        "label": {"function": "PLAY_MUSIC", "genre": "rock",      "room": "living_room"}},
+  {"query": "can you play classical in the bedroom",      "label": {"function": "PLAY_MUSIC", "genre": "classical", "room": "bedroom"}},
+  {"query": "kitchen needs some pop music",               "label": {"function": "PLAY_MUSIC", "genre": "pop",       "room": "kitchen"}},
+  {"query": "living room pop music please",               "label": {"function": "PLAY_MUSIC", "genre": "pop",       "room": "living_room"}},
+  {"query": "chill classical in the living room",         "label": {"function": "PLAY_MUSIC", "genre": "classical", "room": "living_room"}},
+
+  {"query": "set a 10 minute timer",                      "label": {"function": "SET_TIMER", "duration": 10}},
+  {"query": "give me a 5 minute timer",                   "label": {"function": "SET_TIMER", "duration": 5}},
+  {"query": "timer for 30 minutes",                       "label": {"function": "SET_TIMER", "duration": 30}},
+  {"query": "start a 2 hour countdown",                   "label": {"function": "SET_TIMER", "duration": 120}},
+  {"query": "set timer 15 mins",                          "label": {"function": "SET_TIMER", "duration": 15}}
+]
