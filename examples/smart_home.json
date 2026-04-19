@@ -8,30 +8,47 @@
         "device": {
           "type": "enum",
           "lexical": true,
-          "values": ["lights", "fan", "tv", "ac"],
+          "values": [
+            "lights",
+            "fan",
+            "tv",
+            "ac",
+            "heater"
+          ],
           "value_descriptions": {
             "lights": "lights are off too dark cannot see dim room visibility poor pitch black need light lamp bulb ceiling gloomy bright glare hurting eyes",
-            "fan":    "fan spinning cold draft blowing chilly freezing from fan too hot stuffy need air circulation ventilation ceiling fan noise bothering humming",
-            "tv":     "tv screen television watching show movie playing display telly program entertainment something to watch picture on",
-            "ac":     "air conditioning temperature too high sweating hot room humid heat uncomfortable climate too warm need cooling air conditioner hvac"
+            "fan": "fan spinning cold draft blowing chilly freezing from fan too hot stuffy need air circulation ventilation ceiling fan noise bothering humming",
+            "tv": "tv screen television watching show movie playing display telly program entertainment something to watch picture on",
+            "ac": "air conditioning temperature too high sweating hot room humid heat uncomfortable climate too warm need cooling air conditioner hvac",
+            "heater": "heater radiator space heater freezing cold warming up chilly winter temperature dropping frost"
           }
         },
         "room": {
           "type": "enum",
           "lexical": true,
-          "values": ["living_room", "bedroom", "kitchen", "office"],
+          "values": [
+            "living_room",
+            "bedroom",
+            "kitchen",
+            "office",
+            "bathroom"
+          ],
           "value_descriptions": {
             "living_room": "living room sofa couch lounging watching tv guests family gathering common area relaxing sitting area lounge",
-            "bedroom":     "bedroom sleeping going to bed waking up tired resting napping night time morning can't sleep tossing turning",
-            "kitchen":     "kitchen cooking meal making food preparing breakfast eating smell of food stovetop dishes culinary",
-            "office":      "office working at desk studying concentration laptop open reading writing calls meetings focus homework"
+            "bedroom": "bedroom sleeping going to bed waking up tired resting napping night time morning can't sleep tossing turning",
+            "kitchen": "kitchen cooking meal making food preparing breakfast eating smell of food stovetop dishes culinary",
+            "office": "office working at desk studying concentration laptop open reading writing calls meetings focus homework",
+            "bathroom": "bathroom shower tub toilet washing face brushing teeth getting ready washroom"
           }
         },
         "state": {
           "type": "enum",
-          "values": ["on", "off"],
+          "values": [
+            "on",
+            "off"
+          ],
           "value_descriptions": {
-            "on":  "turn on switch on start activate enable launch open power on — too dark too hot stuffy need it want it need heat device required feels uncomfortable",
+            "on": "turn on switch on start activate enable launch open power on — too dark too hot stuffy need it want it need heat device required feels uncomfortable",
             "off": "turn off switch off shut down stop disable kill deactivate close shut off end — too cold bothering me too loud annoying drafty freezing going to sleep done with it quiet please stop it not needed"
           }
         }
@@ -43,22 +60,35 @@
       "parameters": {
         "genre": {
           "type": "enum",
-          "values": ["jazz", "pop", "rock", "classical"],
+          "values": [
+            "jazz",
+            "pop",
+            "rock",
+            "classical",
+            "lofi"
+          ],
           "value_descriptions": {
-            "jazz":      "jazz smooth mellow relaxing evening chill lounge sophisticated background vibe saxophone trumpet cool",
-            "pop":       "pop upbeat cheerful catchy sing along dance party fun energetic mainstream radio hits",
-            "rock":      "rock loud energetic pumped up electric guitar bold headbanging intense driving workout anthem",
-            "classical": "classical calm peaceful study focus elegant reading concentration symphony orchestra refined soothing piano"
+            "jazz": "jazz smooth mellow relaxing evening chill lounge sophisticated background vibe saxophone trumpet cool",
+            "pop": "pop upbeat cheerful catchy sing along dance party fun energetic mainstream radio hits",
+            "rock": "rock loud energetic pumped up electric guitar bold headbanging intense driving workout anthem",
+            "classical": "classical calm peaceful study focus elegant reading concentration symphony orchestra refined soothing piano",
+            "lofi": "lofi beats hip hop study relaxing background ambient chill chillhop deep focus background music"
           }
         },
         "room": {
           "type": "enum",
           "lexical": true,
-          "values": ["living_room", "bedroom", "kitchen"],
+          "values": [
+            "living_room",
+            "bedroom",
+            "kitchen",
+            "office"
+          ],
           "value_descriptions": {
             "living_room": "living room sofa couch lounge guests relaxing watching",
-            "bedroom":     "bedroom sleeping resting waking up night morning",
-            "kitchen":     "kitchen cooking eating breakfast meal"
+            "bedroom": "bedroom sleeping resting waking up night morning",
+            "kitchen": "kitchen cooking eating breakfast meal",
+            "office": "office working focus studying"
           }
         }
       }
@@ -70,6 +100,96 @@
         "duration": {
           "type": "number",
           "description": "Minutes. Extract from: '10 minutes', '2 hours'=120, '30 seconds'=0.5"
+        }
+      }
+    },
+    {
+      "name": "CONTROL_DOOR_LOCK",
+      "description": "Lock or unlock a specific door in the house.",
+      "parameters": {
+        "door": {
+          "type": "enum",
+          "lexical": true,
+          "values": [
+            "front_door",
+            "back_door",
+            "garage"
+          ],
+          "value_descriptions": {
+            "front_door": "front door main entrance entry way front porch street door",
+            "back_door": "back door patio door rear entrance backyard door deck",
+            "garage": "garage door car port side door auto garage driveway"
+          }
+        },
+        "state": {
+          "type": "enum",
+          "values": [
+            "locked",
+            "unlocked"
+          ],
+          "value_descriptions": {
+            "locked": "lock secure bolt close ensure safety lock it up going out sleeping leaving house",
+            "unlocked": "unlock open unlatch let someone in coming home open the door expecting guests"
+          }
+        }
+      }
+    },
+    {
+      "name": "SET_TEMPERATURE",
+      "description": "Set the thermostat to a specific temperature.",
+      "parameters": {
+        "room": {
+          "type": "enum",
+          "lexical": true,
+          "values": [
+            "living_room",
+            "bedroom",
+            "kitchen",
+            "office",
+            "entire_house"
+          ],
+          "value_descriptions": {
+            "living_room": "living room sofa lounge",
+            "bedroom": "bedroom sleeping",
+            "kitchen": "kitchen cooking",
+            "office": "office working",
+            "entire_house": "whole house everywhere all rooms thermostat central heating hvac system"
+          }
+        },
+        "temperature": {
+          "type": "number",
+          "description": "Degrees. Extract from: '72 degrees', 'set to 68', '22 celsius'"
+        }
+      }
+    },
+    {
+      "name": "CONTROL_BLINDS",
+      "description": "Open or close the window blinds or shades.",
+      "parameters": {
+        "room": {
+          "type": "enum",
+          "lexical": true,
+          "values": [
+            "living_room",
+            "bedroom",
+            "office"
+          ],
+          "value_descriptions": {
+            "living_room": "living room lounge",
+            "bedroom": "bedroom sleeping",
+            "office": "office working"
+          }
+        },
+        "state": {
+          "type": "enum",
+          "values": [
+            "open",
+            "closed"
+          ],
+          "value_descriptions": {
+            "open": "open raise let light in sunlight morning bright outside want to see outside uncover windows",
+            "closed": "close shut lower too bright glare privacy nighttime dark out block out the sun"
+          }
         }
       }
     }

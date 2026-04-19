@@ -1,0 +1,3702 @@
+[
+    {
+        "query": "turn on the lights in the living room",
+        "function": "CONTROL_DEVICE",
+        "params": {
+            "device": "lights",
+            "room": "living_room",
+            "state": "on"
+        },
+        "slots": {
+            "device": "lights",
+            "room": "living_room",
+            "state": "on"
+        }
+    },
+    {
+        "query": "switch off the bedroom lights please",
+        "function": "CONTROL_DEVICE",
+        "params": {
+            "device": "lights",
+            "room": "bedroom",
+            "state": "off"
+        },
+        "slots": {
+            "device": "lights",
+            "room": "bedroom",
+            "state": "off"
+        }
+    },
+    {
+        "query": "it is pitch black in the kitchen",
+        "function": "CONTROL_DEVICE",
+        "params": {
+            "device": "lights",
+            "room": "kitchen",
+            "state": "on"
+        },
+        "slots": {
+            "device": "lights",
+            "room": "kitchen",
+            "state": "on"
+        }
+    },
+    {
+        "query": "kill the office lights",
+        "function": "CONTROL_DEVICE",
+        "params": {
+            "device": "lights",
+            "room": "office",
+            "state": "off"
+        },
+        "slots": {
+            "device": "lights",
+            "room": "office",
+            "state": "off"
+        }
+    },
+    {
+        "query": "bathroom lights on",
+        "function": "CONTROL_DEVICE",
+        "params": {
+            "device": "lights",
+            "room": "bathroom",
+            "state": "on"
+        },
+        "slots": {
+            "device": "lights",
+            "room": "bathroom",
+            "state": "on"
+        }
+    },
+    {
+        "query": "the bright glare in the living room is hurting my eyes",
+        "function": "CONTROL_DEVICE",
+        "params": {
+            "device": "lights",
+            "room": "living_room",
+            "state": "off"
+        },
+        "slots": {
+            "device": "lights",
+            "room": "living_room",
+            "state": "off"
+        }
+    },
+    {
+        "query": "dim room visibility is poor in the office",
+        "function": "CONTROL_DEVICE",
+        "params": {
+            "device": "lights",
+            "room": "office",
+            "state": "on"
+        },
+        "slots": {
+            "device": "lights",
+            "room": "office",
+            "state": "on"
+        }
+    },
+    {
+        "query": "shut down the kitchen lights",
+        "function": "CONTROL_DEVICE",
+        "params": {
+            "device": "lights",
+            "room": "kitchen",
+            "state": "off"
+        },
+        "slots": {
+            "device": "lights",
+            "room": "kitchen",
+            "state": "off"
+        }
+    },
+    {
+        "query": "activate the bedroom lamp",
+        "function": "CONTROL_DEVICE",
+        "params": {
+            "device": "lights",
+            "room": "bedroom",
+            "state": "on"
+        },
+        "slots": {
+            "device": "lights",
+            "room": "bedroom",
+            "state": "on"
+        }
+    },
+    {
+        "query": "turn off the bathroom bulb",
+        "function": "CONTROL_DEVICE",
+        "params": {
+            "device": "lights",
+            "room": "bathroom",
+            "state": "off"
+        },
+        "slots": {
+            "device": "lights",
+            "room": "bathroom",
+            "state": "off"
+        }
+    },
+    {
+        "query": "start the fan in the kitchen",
+        "function": "CONTROL_DEVICE",
+        "params": {
+            "device": "fan",
+            "room": "kitchen",
+            "state": "on"
+        },
+        "slots": {
+            "device": "fan",
+            "room": "kitchen",
+            "state": "on"
+        }
+    },
+    {
+        "query": "close the fan in the bedroom",
+        "function": "CONTROL_DEVICE",
+        "params": {
+            "device": "fan",
+            "room": "bedroom",
+            "state": "off"
+        },
+        "slots": {
+            "device": "fan",
+            "room": "bedroom",
+            "state": "off"
+        }
+    },
+    {
+        "query": "it's too hot turn the living room fan on",
+        "function": "CONTROL_DEVICE",
+        "params": {
+            "device": "fan",
+            "room": "living_room",
+            "state": "on"
+        },
+        "slots": {
+            "device": "fan",
+            "room": "living_room",
+            "state": "on"
+        }
+    },
+    {
+        "query": "disable the office fan",
+        "function": "CONTROL_DEVICE",
+        "params": {
+            "device": "fan",
+            "room": "office",
+            "state": "off"
+        },
+        "slots": {
+            "device": "fan",
+            "room": "office",
+            "state": "off"
+        }
+    },
+    {
+        "query": "the kitchen fan is too loud shut it down",
+        "function": "CONTROL_DEVICE",
+        "params": {
+            "device": "fan",
+            "room": "kitchen",
+            "state": "off"
+        },
+        "slots": {
+            "device": "fan",
+            "room": "kitchen",
+            "state": "off"
+        }
+    },
+    {
+        "query": "need air circulation in the bathroom",
+        "function": "CONTROL_DEVICE",
+        "params": {
+            "device": "fan",
+            "room": "bathroom",
+            "state": "on"
+        },
+        "slots": {
+            "device": "fan",
+            "room": "bathroom",
+            "state": "on"
+        }
+    },
+    {
+        "query": "the draft from the fan is making me chilly in the bedroom",
+        "function": "CONTROL_DEVICE",
+        "params": {
+            "device": "fan",
+            "room": "bedroom",
+            "state": "off"
+        },
+        "slots": {
+            "device": "fan",
+            "room": "bedroom",
+            "state": "off"
+        }
+    },
+    {
+        "query": "get the office ceiling fan spinning",
+        "function": "CONTROL_DEVICE",
+        "params": {
+            "device": "fan",
+            "room": "office",
+            "state": "on"
+        },
+        "slots": {
+            "device": "fan",
+            "room": "office",
+            "state": "on"
+        }
+    },
+    {
+        "query": "stop the living room fan",
+        "function": "CONTROL_DEVICE",
+        "params": {
+            "device": "fan",
+            "room": "living_room",
+            "state": "off"
+        },
+        "slots": {
+            "device": "fan",
+            "room": "living_room",
+            "state": "off"
+        }
+    },
+    {
+        "query": "freezing from the fan in the kitchen",
+        "function": "CONTROL_DEVICE",
+        "params": {
+            "device": "fan",
+            "room": "kitchen",
+            "state": "off"
+        },
+        "slots": {
+            "device": "fan",
+            "room": "kitchen",
+            "state": "off"
+        }
+    },
+    {
+        "query": "open the tv in the living room",
+        "function": "CONTROL_DEVICE",
+        "params": {
+            "device": "tv",
+            "room": "living_room",
+            "state": "on"
+        },
+        "slots": {
+            "device": "tv",
+            "room": "living_room",
+            "state": "on"
+        }
+    },
+    {
+        "query": "turn off the bedroom tv",
+        "function": "CONTROL_DEVICE",
+        "params": {
+            "device": "tv",
+            "room": "bedroom",
+            "state": "off"
+        },
+        "slots": {
+            "device": "tv",
+            "room": "bedroom",
+            "state": "off"
+        }
+    },
+    {
+        "query": "switch on the kitchen tv",
+        "function": "CONTROL_DEVICE",
+        "params": {
+            "device": "tv",
+            "room": "kitchen",
+            "state": "on"
+        },
+        "slots": {
+            "device": "tv",
+            "room": "kitchen",
+            "state": "on"
+        }
+    },
+    {
+        "query": "can you kill the tv in the office",
+        "function": "CONTROL_DEVICE",
+        "params": {
+            "device": "tv",
+            "room": "office",
+            "state": "off"
+        },
+        "slots": {
+            "device": "tv",
+            "room": "office",
+            "state": "off"
+        }
+    },
+    {
+        "query": "turn on the telly in the bathroom",
+        "function": "CONTROL_DEVICE",
+        "params": {
+            "device": "tv",
+            "room": "bathroom",
+            "state": "on"
+        },
+        "slots": {
+            "device": "tv",
+            "room": "bathroom",
+            "state": "on"
+        }
+    },
+    {
+        "query": "done watching the living room television",
+        "function": "CONTROL_DEVICE",
+        "params": {
+            "device": "tv",
+            "room": "living_room",
+            "state": "off"
+        },
+        "slots": {
+            "device": "tv",
+            "room": "living_room",
+            "state": "off"
+        }
+    },
+    {
+        "query": "need some entertainment in the bedroom",
+        "function": "CONTROL_DEVICE",
+        "params": {
+            "device": "tv",
+            "room": "bedroom",
+            "state": "on"
+        },
+        "slots": {
+            "device": "tv",
+            "room": "bedroom",
+            "state": "on"
+        }
+    },
+    {
+        "query": "close the office tv",
+        "function": "CONTROL_DEVICE",
+        "params": {
+            "device": "tv",
+            "room": "office",
+            "state": "off"
+        },
+        "slots": {
+            "device": "tv",
+            "room": "office",
+            "state": "off"
+        }
+    },
+    {
+        "query": "start a movie in the living room",
+        "function": "CONTROL_DEVICE",
+        "params": {
+            "device": "tv",
+            "room": "living_room",
+            "state": "on"
+        },
+        "slots": {
+            "device": "tv",
+            "room": "living_room",
+            "state": "on"
+        }
+    },
+    {
+        "query": "stop the kitchen program",
+        "function": "CONTROL_DEVICE",
+        "params": {
+            "device": "tv",
+            "room": "kitchen",
+            "state": "off"
+        },
+        "slots": {
+            "device": "tv",
+            "room": "kitchen",
+            "state": "off"
+        }
+    },
+    {
+        "query": "turn on the ac in the office",
+        "function": "CONTROL_DEVICE",
+        "params": {
+            "device": "ac",
+            "room": "office",
+            "state": "on"
+        },
+        "slots": {
+            "device": "ac",
+            "room": "office",
+            "state": "on"
+        }
+    },
+    {
+        "query": "bedroom ac off",
+        "function": "CONTROL_DEVICE",
+        "params": {
+            "device": "ac",
+            "room": "bedroom",
+            "state": "off"
+        },
+        "slots": {
+            "device": "ac",
+            "room": "bedroom",
+            "state": "off"
+        }
+    },
+    {
+        "query": "get the living room ac going",
+        "function": "CONTROL_DEVICE",
+        "params": {
+            "device": "ac",
+            "room": "living_room",
+            "state": "on"
+        },
+        "slots": {
+            "device": "ac",
+            "room": "living_room",
+            "state": "on"
+        }
+    },
+    {
+        "query": "stop the kitchen air conditioning",
+        "function": "CONTROL_DEVICE",
+        "params": {
+            "device": "ac",
+            "room": "kitchen",
+            "state": "off"
+        },
+        "slots": {
+            "device": "ac",
+            "room": "kitchen",
+            "state": "off"
+        }
+    },
+    {
+        "query": "sweating hot in the bedroom",
+        "function": "CONTROL_DEVICE",
+        "params": {
+            "device": "ac",
+            "room": "bedroom",
+            "state": "on"
+        },
+        "slots": {
+            "device": "ac",
+            "room": "bedroom",
+            "state": "on"
+        }
+    },
+    {
+        "query": "climate too warm in the office need cooling",
+        "function": "CONTROL_DEVICE",
+        "params": {
+            "device": "ac",
+            "room": "office",
+            "state": "on"
+        },
+        "slots": {
+            "device": "ac",
+            "room": "office",
+            "state": "on"
+        }
+    },
+    {
+        "query": "turn off the living room hvac",
+        "function": "CONTROL_DEVICE",
+        "params": {
+            "device": "ac",
+            "room": "living_room",
+            "state": "off"
+        },
+        "slots": {
+            "device": "ac",
+            "room": "living_room",
+            "state": "off"
+        }
+    },
+    {
+        "query": "deactivate the bathroom air conditioner",
+        "function": "CONTROL_DEVICE",
+        "params": {
+            "device": "ac",
+            "room": "bathroom",
+            "state": "off"
+        },
+        "slots": {
+            "device": "ac",
+            "room": "bathroom",
+            "state": "off"
+        }
+    },
+    {
+        "query": "the kitchen is humid turn on the ac",
+        "function": "CONTROL_DEVICE",
+        "params": {
+            "device": "ac",
+            "room": "kitchen",
+            "state": "on"
+        },
+        "slots": {
+            "device": "ac",
+            "room": "kitchen",
+            "state": "on"
+        }
+    },
+    {
+        "query": "shut off the office ac",
+        "function": "CONTROL_DEVICE",
+        "params": {
+            "device": "ac",
+            "room": "office",
+            "state": "off"
+        },
+        "slots": {
+            "device": "ac",
+            "room": "office",
+            "state": "off"
+        }
+    },
+    {
+        "query": "turn on the heater in the living room",
+        "function": "CONTROL_DEVICE",
+        "params": {
+            "device": "heater",
+            "room": "living_room",
+            "state": "on"
+        },
+        "slots": {
+            "device": "heater",
+            "room": "living_room",
+            "state": "on"
+        }
+    },
+    {
+        "query": "shut off the bedroom space heater",
+        "function": "CONTROL_DEVICE",
+        "params": {
+            "device": "heater",
+            "room": "bedroom",
+            "state": "off"
+        },
+        "slots": {
+            "device": "heater",
+            "room": "bedroom",
+            "state": "off"
+        }
+    },
+    {
+        "query": "it is freezing cold in the office",
+        "function": "CONTROL_DEVICE",
+        "params": {
+            "device": "heater",
+            "room": "office",
+            "state": "on"
+        },
+        "slots": {
+            "device": "heater",
+            "room": "office",
+            "state": "on"
+        }
+    },
+    {
+        "query": "temperature dropping in the bathroom",
+        "function": "CONTROL_DEVICE",
+        "params": {
+            "device": "heater",
+            "room": "bathroom",
+            "state": "on"
+        },
+        "slots": {
+            "device": "heater",
+            "room": "bathroom",
+            "state": "on"
+        }
+    },
+    {
+        "query": "kill the kitchen radiator",
+        "function": "CONTROL_DEVICE",
+        "params": {
+            "device": "heater",
+            "room": "kitchen",
+            "state": "off"
+        },
+        "slots": {
+            "device": "heater",
+            "room": "kitchen",
+            "state": "off"
+        }
+    },
+    {
+        "query": "winter frost need heat in the bedroom",
+        "function": "CONTROL_DEVICE",
+        "params": {
+            "device": "heater",
+            "room": "bedroom",
+            "state": "on"
+        },
+        "slots": {
+            "device": "heater",
+            "room": "bedroom",
+            "state": "on"
+        }
+    },
+    {
+        "query": "turn off the living room heater",
+        "function": "CONTROL_DEVICE",
+        "params": {
+            "device": "heater",
+            "room": "living_room",
+            "state": "off"
+        },
+        "slots": {
+            "device": "heater",
+            "room": "living_room",
+            "state": "off"
+        }
+    },
+    {
+        "query": "warming up the kitchen start the heater",
+        "function": "CONTROL_DEVICE",
+        "params": {
+            "device": "heater",
+            "room": "kitchen",
+            "state": "on"
+        },
+        "slots": {
+            "device": "heater",
+            "room": "kitchen",
+            "state": "on"
+        }
+    },
+    {
+        "query": "disable the office space heater",
+        "function": "CONTROL_DEVICE",
+        "params": {
+            "device": "heater",
+            "room": "office",
+            "state": "off"
+        },
+        "slots": {
+            "device": "heater",
+            "room": "office",
+            "state": "off"
+        }
+    },
+    {
+        "query": "deactivate the bathroom heater",
+        "function": "CONTROL_DEVICE",
+        "params": {
+            "device": "heater",
+            "room": "bathroom",
+            "state": "off"
+        },
+        "slots": {
+            "device": "heater",
+            "room": "bathroom",
+            "state": "off"
+        }
+    },
+    {
+        "query": "play some jazz in the living room",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "jazz",
+            "room": "living_room"
+        },
+        "slots": {
+            "genre": "jazz",
+            "room": "living_room"
+        }
+    },
+    {
+        "query": "put on smooth jazz in the bedroom",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "jazz",
+            "room": "bedroom"
+        },
+        "slots": {
+            "genre": "jazz",
+            "room": "bedroom"
+        }
+    },
+    {
+        "query": "play jazz while i cook",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "jazz",
+            "room": "kitchen"
+        },
+        "slots": {
+            "genre": "jazz",
+            "room": "kitchen"
+        }
+    },
+    {
+        "query": "sophisticated background vibe for the office",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "jazz",
+            "room": "office"
+        },
+        "slots": {
+            "genre": "jazz",
+            "room": "office"
+        }
+    },
+    {
+        "query": "need relaxing evening chill lounge music on the sofa",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "jazz",
+            "room": "living_room"
+        },
+        "slots": {
+            "genre": "jazz",
+            "room": "living_room"
+        }
+    },
+    {
+        "query": "play mellow saxophone in the kitchen",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "jazz",
+            "room": "kitchen"
+        },
+        "slots": {
+            "genre": "jazz",
+            "room": "kitchen"
+        }
+    },
+    {
+        "query": "cool trumpet background music in my bedroom",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "jazz",
+            "room": "bedroom"
+        },
+        "slots": {
+            "genre": "jazz",
+            "room": "bedroom"
+        }
+    },
+    {
+        "query": "jazz music for studying at my desk",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "jazz",
+            "room": "office"
+        },
+        "slots": {
+            "genre": "jazz",
+            "room": "office"
+        }
+    },
+    {
+        "query": "play jazz while eating breakfast",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "jazz",
+            "room": "kitchen"
+        },
+        "slots": {
+            "genre": "jazz",
+            "room": "kitchen"
+        }
+    },
+    {
+        "query": "put on jazz for the family gathering",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "jazz",
+            "room": "living_room"
+        },
+        "slots": {
+            "genre": "jazz",
+            "room": "living_room"
+        }
+    },
+    {
+        "query": "play pop in the kitchen",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "pop",
+            "room": "kitchen"
+        },
+        "slots": {
+            "genre": "pop",
+            "room": "kitchen"
+        }
+    },
+    {
+        "query": "living room pop music please",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "pop",
+            "room": "living_room"
+        },
+        "slots": {
+            "genre": "pop",
+            "room": "living_room"
+        }
+    },
+    {
+        "query": "upbeat cheerful music while waking up",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "pop",
+            "room": "bedroom"
+        },
+        "slots": {
+            "genre": "pop",
+            "room": "bedroom"
+        }
+    },
+    {
+        "query": "play catchy mainstream radio hits in the office",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "pop",
+            "room": "office"
+        },
+        "slots": {
+            "genre": "pop",
+            "room": "office"
+        }
+    },
+    {
+        "query": "we need some dance party fun for the guests",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "pop",
+            "room": "living_room"
+        },
+        "slots": {
+            "genre": "pop",
+            "room": "living_room"
+        }
+    },
+    {
+        "query": "energetic sing along songs while I do the dishes",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "pop",
+            "room": "kitchen"
+        },
+        "slots": {
+            "genre": "pop",
+            "room": "kitchen"
+        }
+    },
+    {
+        "query": "put on some pop while I get out of bed",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "pop",
+            "room": "bedroom"
+        },
+        "slots": {
+            "genre": "pop",
+            "room": "bedroom"
+        }
+    },
+    {
+        "query": "play pop music at my laptop",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "pop",
+            "room": "office"
+        },
+        "slots": {
+            "genre": "pop",
+            "room": "office"
+        }
+    },
+    {
+        "query": "radio hits while lounging on the couch",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "pop",
+            "room": "living_room"
+        },
+        "slots": {
+            "genre": "pop",
+            "room": "living_room"
+        }
+    },
+    {
+        "query": "cheerful breakfast music",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "pop",
+            "room": "kitchen"
+        },
+        "slots": {
+            "genre": "pop",
+            "room": "kitchen"
+        }
+    },
+    {
+        "query": "play rock in the bedroom",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "rock",
+            "room": "bedroom"
+        },
+        "slots": {
+            "genre": "rock",
+            "room": "bedroom"
+        }
+    },
+    {
+        "query": "put on some rock in the living room",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "rock",
+            "room": "living_room"
+        },
+        "slots": {
+            "genre": "rock",
+            "room": "living_room"
+        }
+    },
+    {
+        "query": "intense driving electric guitar for my homework",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "rock",
+            "room": "office"
+        },
+        "slots": {
+            "genre": "rock",
+            "room": "office"
+        }
+    },
+    {
+        "query": "loud energetic pumped up music while I make food",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "rock",
+            "room": "kitchen"
+        },
+        "slots": {
+            "genre": "rock",
+            "room": "kitchen"
+        }
+    },
+    {
+        "query": "play headbanging music on the sofa",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "rock",
+            "room": "living_room"
+        },
+        "slots": {
+            "genre": "rock",
+            "room": "living_room"
+        }
+    },
+    {
+        "query": "bold rock anthems when I wake up",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "rock",
+            "room": "bedroom"
+        },
+        "slots": {
+            "genre": "rock",
+            "room": "bedroom"
+        }
+    },
+    {
+        "query": "play rock music at the desk",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "rock",
+            "room": "office"
+        },
+        "slots": {
+            "genre": "rock",
+            "room": "office"
+        }
+    },
+    {
+        "query": "electric guitar tracks while cooking",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "rock",
+            "room": "kitchen"
+        },
+        "slots": {
+            "genre": "rock",
+            "room": "kitchen"
+        }
+    },
+    {
+        "query": "loud rock in the lounge area",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "rock",
+            "room": "living_room"
+        },
+        "slots": {
+            "genre": "rock",
+            "room": "living_room"
+        }
+    },
+    {
+        "query": "energetic morning rock in the bedroom",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "rock",
+            "room": "bedroom"
+        },
+        "slots": {
+            "genre": "rock",
+            "room": "bedroom"
+        }
+    },
+    {
+        "query": "can you play classical in the bedroom",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "classical",
+            "room": "bedroom"
+        },
+        "slots": {
+            "genre": "classical",
+            "room": "bedroom"
+        }
+    },
+    {
+        "query": "chill classical in the living room",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "classical",
+            "room": "living_room"
+        },
+        "slots": {
+            "genre": "classical",
+            "room": "living_room"
+        }
+    },
+    {
+        "query": "elegant reading concentration music in the office",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "classical",
+            "room": "office"
+        },
+        "slots": {
+            "genre": "classical",
+            "room": "office"
+        }
+    },
+    {
+        "query": "peaceful symphony orchestra while preparing meal",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "classical",
+            "room": "kitchen"
+        },
+        "slots": {
+            "genre": "classical",
+            "room": "kitchen"
+        }
+    },
+    {
+        "query": "soothing piano for resting",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "classical",
+            "room": "bedroom"
+        },
+        "slots": {
+            "genre": "classical",
+            "room": "bedroom"
+        }
+    },
+    {
+        "query": "refined calm music for the guests",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "classical",
+            "room": "living_room"
+        },
+        "slots": {
+            "genre": "classical",
+            "room": "living_room"
+        }
+    },
+    {
+        "query": "study focus classical music at desk",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "classical",
+            "room": "office"
+        },
+        "slots": {
+            "genre": "classical",
+            "room": "office"
+        }
+    },
+    {
+        "query": "classical background while eating",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "classical",
+            "room": "kitchen"
+        },
+        "slots": {
+            "genre": "classical",
+            "room": "kitchen"
+        }
+    },
+    {
+        "query": "play a symphony while going to sleep",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "classical",
+            "room": "bedroom"
+        },
+        "slots": {
+            "genre": "classical",
+            "room": "bedroom"
+        }
+    },
+    {
+        "query": "put on classical music in the lounge",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "classical",
+            "room": "living_room"
+        },
+        "slots": {
+            "genre": "classical",
+            "room": "living_room"
+        }
+    },
+    {
+        "query": "play lofi beats in the office",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "lofi",
+            "room": "office"
+        },
+        "slots": {
+            "genre": "lofi",
+            "room": "office"
+        }
+    },
+    {
+        "query": "lofi hip hop in the bedroom",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "lofi",
+            "room": "bedroom"
+        },
+        "slots": {
+            "genre": "lofi",
+            "room": "bedroom"
+        }
+    },
+    {
+        "query": "deep focus background music while working",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "lofi",
+            "room": "office"
+        },
+        "slots": {
+            "genre": "lofi",
+            "room": "office"
+        }
+    },
+    {
+        "query": "relaxing ambient chill while cooking",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "lofi",
+            "room": "kitchen"
+        },
+        "slots": {
+            "genre": "lofi",
+            "room": "kitchen"
+        }
+    },
+    {
+        "query": "chillhop for lounging on the couch",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "lofi",
+            "room": "living_room"
+        },
+        "slots": {
+            "genre": "lofi",
+            "room": "living_room"
+        }
+    },
+    {
+        "query": "put on some lofi for studying",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "lofi",
+            "room": "office"
+        },
+        "slots": {
+            "genre": "lofi",
+            "room": "office"
+        }
+    },
+    {
+        "query": "ambient chill beats for napping",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "lofi",
+            "room": "bedroom"
+        },
+        "slots": {
+            "genre": "lofi",
+            "room": "bedroom"
+        }
+    },
+    {
+        "query": "lofi music while chopping vegetables",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "lofi",
+            "room": "kitchen"
+        },
+        "slots": {
+            "genre": "lofi",
+            "room": "kitchen"
+        }
+    },
+    {
+        "query": "relaxing lofi vibe for the sitting area",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "lofi",
+            "room": "living_room"
+        },
+        "slots": {
+            "genre": "lofi",
+            "room": "living_room"
+        }
+    },
+    {
+        "query": "lofi beats at my laptop please",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "lofi",
+            "room": "office"
+        },
+        "slots": {
+            "genre": "lofi",
+            "room": "office"
+        }
+    },
+    {
+        "query": "play some jazz in the living room",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "jazz",
+            "room": "living_room"
+        },
+        "slots": {
+            "genre": "jazz",
+            "room": "living_room"
+        }
+    },
+    {
+        "query": "put on smooth jazz in the bedroom",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "jazz",
+            "room": "bedroom"
+        },
+        "slots": {
+            "genre": "jazz",
+            "room": "bedroom"
+        }
+    },
+    {
+        "query": "play jazz while i cook",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "jazz",
+            "room": "kitchen"
+        },
+        "slots": {
+            "genre": "jazz",
+            "room": "kitchen"
+        }
+    },
+    {
+        "query": "sophisticated background vibe for the office",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "jazz",
+            "room": "office"
+        },
+        "slots": {
+            "genre": "jazz",
+            "room": "office"
+        }
+    },
+    {
+        "query": "need relaxing evening chill lounge music on the sofa",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "jazz",
+            "room": "living_room"
+        },
+        "slots": {
+            "genre": "jazz",
+            "room": "living_room"
+        }
+    },
+    {
+        "query": "play mellow saxophone in the kitchen",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "jazz",
+            "room": "kitchen"
+        },
+        "slots": {
+            "genre": "jazz",
+            "room": "kitchen"
+        }
+    },
+    {
+        "query": "cool trumpet background music in my bedroom",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "jazz",
+            "room": "bedroom"
+        },
+        "slots": {
+            "genre": "jazz",
+            "room": "bedroom"
+        }
+    },
+    {
+        "query": "jazz music for studying at my desk",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "jazz",
+            "room": "office"
+        },
+        "slots": {
+            "genre": "jazz",
+            "room": "office"
+        }
+    },
+    {
+        "query": "play jazz while eating breakfast",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "jazz",
+            "room": "kitchen"
+        },
+        "slots": {
+            "genre": "jazz",
+            "room": "kitchen"
+        }
+    },
+    {
+        "query": "put on jazz for the family gathering",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "jazz",
+            "room": "living_room"
+        },
+        "slots": {
+            "genre": "jazz",
+            "room": "living_room"
+        }
+    },
+    {
+        "query": "play pop in the kitchen",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "pop",
+            "room": "kitchen"
+        },
+        "slots": {
+            "genre": "pop",
+            "room": "kitchen"
+        }
+    },
+    {
+        "query": "living room pop music please",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "pop",
+            "room": "living_room"
+        },
+        "slots": {
+            "genre": "pop",
+            "room": "living_room"
+        }
+    },
+    {
+        "query": "upbeat cheerful music while waking up",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "pop",
+            "room": "bedroom"
+        },
+        "slots": {
+            "genre": "pop",
+            "room": "bedroom"
+        }
+    },
+    {
+        "query": "play catchy mainstream radio hits in the office",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "pop",
+            "room": "office"
+        },
+        "slots": {
+            "genre": "pop",
+            "room": "office"
+        }
+    },
+    {
+        "query": "we need some dance party fun for the guests",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "pop",
+            "room": "living_room"
+        },
+        "slots": {
+            "genre": "pop",
+            "room": "living_room"
+        }
+    },
+    {
+        "query": "energetic sing along songs while I do the dishes",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "pop",
+            "room": "kitchen"
+        },
+        "slots": {
+            "genre": "pop",
+            "room": "kitchen"
+        }
+    },
+    {
+        "query": "put on some pop while I get out of bed",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "pop",
+            "room": "bedroom"
+        },
+        "slots": {
+            "genre": "pop",
+            "room": "bedroom"
+        }
+    },
+    {
+        "query": "play pop music at my laptop",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "pop",
+            "room": "office"
+        },
+        "slots": {
+            "genre": "pop",
+            "room": "office"
+        }
+    },
+    {
+        "query": "radio hits while lounging on the couch",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "pop",
+            "room": "living_room"
+        },
+        "slots": {
+            "genre": "pop",
+            "room": "living_room"
+        }
+    },
+    {
+        "query": "cheerful breakfast music",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "pop",
+            "room": "kitchen"
+        },
+        "slots": {
+            "genre": "pop",
+            "room": "kitchen"
+        }
+    },
+    {
+        "query": "play rock in the bedroom",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "rock",
+            "room": "bedroom"
+        },
+        "slots": {
+            "genre": "rock",
+            "room": "bedroom"
+        }
+    },
+    {
+        "query": "put on some rock in the living room",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "rock",
+            "room": "living_room"
+        },
+        "slots": {
+            "genre": "rock",
+            "room": "living_room"
+        }
+    },
+    {
+        "query": "intense driving electric guitar for my homework",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "rock",
+            "room": "office"
+        },
+        "slots": {
+            "genre": "rock",
+            "room": "office"
+        }
+    },
+    {
+        "query": "loud energetic pumped up music while I make food",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "rock",
+            "room": "kitchen"
+        },
+        "slots": {
+            "genre": "rock",
+            "room": "kitchen"
+        }
+    },
+    {
+        "query": "play headbanging music on the sofa",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "rock",
+            "room": "living_room"
+        },
+        "slots": {
+            "genre": "rock",
+            "room": "living_room"
+        }
+    },
+    {
+        "query": "bold rock anthems when I wake up",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "rock",
+            "room": "bedroom"
+        },
+        "slots": {
+            "genre": "rock",
+            "room": "bedroom"
+        }
+    },
+    {
+        "query": "play rock music at the desk",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "rock",
+            "room": "office"
+        },
+        "slots": {
+            "genre": "rock",
+            "room": "office"
+        }
+    },
+    {
+        "query": "electric guitar tracks while cooking",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "rock",
+            "room": "kitchen"
+        },
+        "slots": {
+            "genre": "rock",
+            "room": "kitchen"
+        }
+    },
+    {
+        "query": "loud rock in the lounge area",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "rock",
+            "room": "living_room"
+        },
+        "slots": {
+            "genre": "rock",
+            "room": "living_room"
+        }
+    },
+    {
+        "query": "energetic morning rock in the bedroom",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "rock",
+            "room": "bedroom"
+        },
+        "slots": {
+            "genre": "rock",
+            "room": "bedroom"
+        }
+    },
+    {
+        "query": "can you play classical in the bedroom",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "classical",
+            "room": "bedroom"
+        },
+        "slots": {
+            "genre": "classical",
+            "room": "bedroom"
+        }
+    },
+    {
+        "query": "chill classical in the living room",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "classical",
+            "room": "living_room"
+        },
+        "slots": {
+            "genre": "classical",
+            "room": "living_room"
+        }
+    },
+    {
+        "query": "elegant reading concentration music in the office",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "classical",
+            "room": "office"
+        },
+        "slots": {
+            "genre": "classical",
+            "room": "office"
+        }
+    },
+    {
+        "query": "peaceful symphony orchestra while preparing meal",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "classical",
+            "room": "kitchen"
+        },
+        "slots": {
+            "genre": "classical",
+            "room": "kitchen"
+        }
+    },
+    {
+        "query": "soothing piano for resting",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "classical",
+            "room": "bedroom"
+        },
+        "slots": {
+            "genre": "classical",
+            "room": "bedroom"
+        }
+    },
+    {
+        "query": "refined calm music for the guests",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "classical",
+            "room": "living_room"
+        },
+        "slots": {
+            "genre": "classical",
+            "room": "living_room"
+        }
+    },
+    {
+        "query": "study focus classical music at desk",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "classical",
+            "room": "office"
+        },
+        "slots": {
+            "genre": "classical",
+            "room": "office"
+        }
+    },
+    {
+        "query": "classical background while eating",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "classical",
+            "room": "kitchen"
+        },
+        "slots": {
+            "genre": "classical",
+            "room": "kitchen"
+        }
+    },
+    {
+        "query": "play a symphony while going to sleep",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "classical",
+            "room": "bedroom"
+        },
+        "slots": {
+            "genre": "classical",
+            "room": "bedroom"
+        }
+    },
+    {
+        "query": "put on classical music in the lounge",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "classical",
+            "room": "living_room"
+        },
+        "slots": {
+            "genre": "classical",
+            "room": "living_room"
+        }
+    },
+    {
+        "query": "play lofi beats in the office",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "lofi",
+            "room": "office"
+        },
+        "slots": {
+            "genre": "lofi",
+            "room": "office"
+        }
+    },
+    {
+        "query": "lofi hip hop in the bedroom",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "lofi",
+            "room": "bedroom"
+        },
+        "slots": {
+            "genre": "lofi",
+            "room": "bedroom"
+        }
+    },
+    {
+        "query": "deep focus background music while working",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "lofi",
+            "room": "office"
+        },
+        "slots": {
+            "genre": "lofi",
+            "room": "office"
+        }
+    },
+    {
+        "query": "relaxing ambient chill while cooking",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "lofi",
+            "room": "kitchen"
+        },
+        "slots": {
+            "genre": "lofi",
+            "room": "kitchen"
+        }
+    },
+    {
+        "query": "chillhop for lounging on the couch",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "lofi",
+            "room": "living_room"
+        },
+        "slots": {
+            "genre": "lofi",
+            "room": "living_room"
+        }
+    },
+    {
+        "query": "put on some lofi for studying",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "lofi",
+            "room": "office"
+        },
+        "slots": {
+            "genre": "lofi",
+            "room": "office"
+        }
+    },
+    {
+        "query": "ambient chill beats for napping",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "lofi",
+            "room": "bedroom"
+        },
+        "slots": {
+            "genre": "lofi",
+            "room": "bedroom"
+        }
+    },
+    {
+        "query": "lofi music while chopping vegetables",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "lofi",
+            "room": "kitchen"
+        },
+        "slots": {
+            "genre": "lofi",
+            "room": "kitchen"
+        }
+    },
+    {
+        "query": "relaxing lofi vibe for the sitting area",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "lofi",
+            "room": "living_room"
+        },
+        "slots": {
+            "genre": "lofi",
+            "room": "living_room"
+        }
+    },
+    {
+        "query": "lofi beats at my laptop please",
+        "function": "PLAY_MUSIC",
+        "params": {
+            "genre": "lofi",
+            "room": "office"
+        },
+        "slots": {
+            "genre": "lofi",
+            "room": "office"
+        }
+    },
+    {
+        "query": "lock the front door",
+        "function": "CONTROL_DOOR_LOCK",
+        "params": {
+            "door": "front_door",
+            "state": "locked"
+        },
+        "slots": {
+            "door": "front_door",
+            "state": "locked"
+        }
+    },
+    {
+        "query": "unlock the front door",
+        "function": "CONTROL_DOOR_LOCK",
+        "params": {
+            "door": "front_door",
+            "state": "unlocked"
+        },
+        "slots": {
+            "door": "front_door",
+            "state": "unlocked"
+        }
+    },
+    {
+        "query": "secure the main entrance",
+        "function": "CONTROL_DOOR_LOCK",
+        "params": {
+            "door": "front_door",
+            "state": "locked"
+        },
+        "slots": {
+            "door": "front_door",
+            "state": "locked"
+        }
+    },
+    {
+        "query": "open the front porch door",
+        "function": "CONTROL_DOOR_LOCK",
+        "params": {
+            "door": "front_door",
+            "state": "unlocked"
+        },
+        "slots": {
+            "door": "front_door",
+            "state": "unlocked"
+        }
+    },
+    {
+        "query": "bolt the street door",
+        "function": "CONTROL_DOOR_LOCK",
+        "params": {
+            "door": "front_door",
+            "state": "locked"
+        },
+        "slots": {
+            "door": "front_door",
+            "state": "locked"
+        }
+    },
+    {
+        "query": "unlatch the entry way",
+        "function": "CONTROL_DOOR_LOCK",
+        "params": {
+            "door": "front_door",
+            "state": "unlocked"
+        },
+        "slots": {
+            "door": "front_door",
+            "state": "unlocked"
+        }
+    },
+    {
+        "query": "going out lock the front door",
+        "function": "CONTROL_DOOR_LOCK",
+        "params": {
+            "door": "front_door",
+            "state": "locked"
+        },
+        "slots": {
+            "door": "front_door",
+            "state": "locked"
+        }
+    },
+    {
+        "query": "expecting guests let someone in the front",
+        "function": "CONTROL_DOOR_LOCK",
+        "params": {
+            "door": "front_door",
+            "state": "unlocked"
+        },
+        "slots": {
+            "door": "front_door",
+            "state": "unlocked"
+        }
+    },
+    {
+        "query": "leaving house ensure safety at the main entrance",
+        "function": "CONTROL_DOOR_LOCK",
+        "params": {
+            "door": "front_door",
+            "state": "locked"
+        },
+        "slots": {
+            "door": "front_door",
+            "state": "locked"
+        }
+    },
+    {
+        "query": "coming home open the front door",
+        "function": "CONTROL_DOOR_LOCK",
+        "params": {
+            "door": "front_door",
+            "state": "unlocked"
+        },
+        "slots": {
+            "door": "front_door",
+            "state": "unlocked"
+        }
+    },
+    {
+        "query": "lock the back door",
+        "function": "CONTROL_DOOR_LOCK",
+        "params": {
+            "door": "back_door",
+            "state": "locked"
+        },
+        "slots": {
+            "door": "back_door",
+            "state": "locked"
+        }
+    },
+    {
+        "query": "unlock the back door",
+        "function": "CONTROL_DOOR_LOCK",
+        "params": {
+            "door": "back_door",
+            "state": "unlocked"
+        },
+        "slots": {
+            "door": "back_door",
+            "state": "unlocked"
+        }
+    },
+    {
+        "query": "secure the patio door",
+        "function": "CONTROL_DOOR_LOCK",
+        "params": {
+            "door": "back_door",
+            "state": "locked"
+        },
+        "slots": {
+            "door": "back_door",
+            "state": "locked"
+        }
+    },
+    {
+        "query": "open the rear entrance",
+        "function": "CONTROL_DOOR_LOCK",
+        "params": {
+            "door": "back_door",
+            "state": "unlocked"
+        },
+        "slots": {
+            "door": "back_door",
+            "state": "unlocked"
+        }
+    },
+    {
+        "query": "bolt the backyard door",
+        "function": "CONTROL_DOOR_LOCK",
+        "params": {
+            "door": "back_door",
+            "state": "locked"
+        },
+        "slots": {
+            "door": "back_door",
+            "state": "locked"
+        }
+    },
+    {
+        "query": "unlatch the deck door",
+        "function": "CONTROL_DOOR_LOCK",
+        "params": {
+            "door": "back_door",
+            "state": "unlocked"
+        },
+        "slots": {
+            "door": "back_door",
+            "state": "unlocked"
+        }
+    },
+    {
+        "query": "going to sleep lock the back door",
+        "function": "CONTROL_DOOR_LOCK",
+        "params": {
+            "door": "back_door",
+            "state": "locked"
+        },
+        "slots": {
+            "door": "back_door",
+            "state": "locked"
+        }
+    },
+    {
+        "query": "let someone in the patio door",
+        "function": "CONTROL_DOOR_LOCK",
+        "params": {
+            "door": "back_door",
+            "state": "unlocked"
+        },
+        "slots": {
+            "door": "back_door",
+            "state": "unlocked"
+        }
+    },
+    {
+        "query": "lock it up at the rear entrance",
+        "function": "CONTROL_DOOR_LOCK",
+        "params": {
+            "door": "back_door",
+            "state": "locked"
+        },
+        "slots": {
+            "door": "back_door",
+            "state": "locked"
+        }
+    },
+    {
+        "query": "unlock the backyard door i am outside",
+        "function": "CONTROL_DOOR_LOCK",
+        "params": {
+            "door": "back_door",
+            "state": "unlocked"
+        },
+        "slots": {
+            "door": "back_door",
+            "state": "unlocked"
+        }
+    },
+    {
+        "query": "lock the garage door",
+        "function": "CONTROL_DOOR_LOCK",
+        "params": {
+            "door": "garage",
+            "state": "locked"
+        },
+        "slots": {
+            "door": "garage",
+            "state": "locked"
+        }
+    },
+    {
+        "query": "unlock the garage door",
+        "function": "CONTROL_DOOR_LOCK",
+        "params": {
+            "door": "garage",
+            "state": "unlocked"
+        },
+        "slots": {
+            "door": "garage",
+            "state": "unlocked"
+        }
+    },
+    {
+        "query": "secure the car port",
+        "function": "CONTROL_DOOR_LOCK",
+        "params": {
+            "door": "garage",
+            "state": "locked"
+        },
+        "slots": {
+            "door": "garage",
+            "state": "locked"
+        }
+    },
+    {
+        "query": "open the auto garage",
+        "function": "CONTROL_DOOR_LOCK",
+        "params": {
+            "door": "garage",
+            "state": "unlocked"
+        },
+        "slots": {
+            "door": "garage",
+            "state": "unlocked"
+        }
+    },
+    {
+        "query": "bolt the side door",
+        "function": "CONTROL_DOOR_LOCK",
+        "params": {
+            "door": "garage",
+            "state": "locked"
+        },
+        "slots": {
+            "door": "garage",
+            "state": "locked"
+        }
+    },
+    {
+        "query": "unlatch the driveway door",
+        "function": "CONTROL_DOOR_LOCK",
+        "params": {
+            "door": "garage",
+            "state": "unlocked"
+        },
+        "slots": {
+            "door": "garage",
+            "state": "unlocked"
+        }
+    },
+    {
+        "query": "sleeping soon make sure garage is locked",
+        "function": "CONTROL_DOOR_LOCK",
+        "params": {
+            "door": "garage",
+            "state": "locked"
+        },
+        "slots": {
+            "door": "garage",
+            "state": "locked"
+        }
+    },
+    {
+        "query": "coming home open the car port",
+        "function": "CONTROL_DOOR_LOCK",
+        "params": {
+            "door": "garage",
+            "state": "unlocked"
+        },
+        "slots": {
+            "door": "garage",
+            "state": "unlocked"
+        }
+    },
+    {
+        "query": "ensure safety by closing the garage",
+        "function": "CONTROL_DOOR_LOCK",
+        "params": {
+            "door": "garage",
+            "state": "locked"
+        },
+        "slots": {
+            "door": "garage",
+            "state": "locked"
+        }
+    },
+    {
+        "query": "unlock the side door for my friend",
+        "function": "CONTROL_DOOR_LOCK",
+        "params": {
+            "door": "garage",
+            "state": "unlocked"
+        },
+        "slots": {
+            "door": "garage",
+            "state": "unlocked"
+        }
+    },
+    {
+        "query": "lock up the front door",
+        "function": "CONTROL_DOOR_LOCK",
+        "params": {
+            "door": "front_door",
+            "state": "locked"
+        },
+        "slots": {
+            "door": "front_door",
+            "state": "locked"
+        }
+    },
+    {
+        "query": "open the main entrance please",
+        "function": "CONTROL_DOOR_LOCK",
+        "params": {
+            "door": "front_door",
+            "state": "unlocked"
+        },
+        "slots": {
+            "door": "front_door",
+            "state": "unlocked"
+        }
+    },
+    {
+        "query": "make sure the patio door is bolted",
+        "function": "CONTROL_DOOR_LOCK",
+        "params": {
+            "door": "back_door",
+            "state": "locked"
+        },
+        "slots": {
+            "door": "back_door",
+            "state": "locked"
+        }
+    },
+    {
+        "query": "let me in the deck door",
+        "function": "CONTROL_DOOR_LOCK",
+        "params": {
+            "door": "back_door",
+            "state": "unlocked"
+        },
+        "slots": {
+            "door": "back_door",
+            "state": "unlocked"
+        }
+    },
+    {
+        "query": "close and secure the auto garage",
+        "function": "CONTROL_DOOR_LOCK",
+        "params": {
+            "door": "garage",
+            "state": "locked"
+        },
+        "slots": {
+            "door": "garage",
+            "state": "locked"
+        }
+    },
+    {
+        "query": "unlatch the garage door so i can pull in",
+        "function": "CONTROL_DOOR_LOCK",
+        "params": {
+            "door": "garage",
+            "state": "unlocked"
+        },
+        "slots": {
+            "door": "garage",
+            "state": "unlocked"
+        }
+    },
+    {
+        "query": "going out lock the entry way",
+        "function": "CONTROL_DOOR_LOCK",
+        "params": {
+            "door": "front_door",
+            "state": "locked"
+        },
+        "slots": {
+            "door": "front_door",
+            "state": "locked"
+        }
+    },
+    {
+        "query": "open the street door i am here",
+        "function": "CONTROL_DOOR_LOCK",
+        "params": {
+            "door": "front_door",
+            "state": "unlocked"
+        },
+        "slots": {
+            "door": "front_door",
+            "state": "unlocked"
+        }
+    },
+    {
+        "query": "lock the backyard door for the night",
+        "function": "CONTROL_DOOR_LOCK",
+        "params": {
+            "door": "back_door",
+            "state": "locked"
+        },
+        "slots": {
+            "door": "back_door",
+            "state": "locked"
+        }
+    },
+    {
+        "query": "unlock the rear entrance for the dog",
+        "function": "CONTROL_DOOR_LOCK",
+        "params": {
+            "door": "back_door",
+            "state": "unlocked"
+        },
+        "slots": {
+            "door": "back_door",
+            "state": "unlocked"
+        }
+    },
+    {
+        "query": "lock the driveway door",
+        "function": "CONTROL_DOOR_LOCK",
+        "params": {
+            "door": "garage",
+            "state": "locked"
+        },
+        "slots": {
+            "door": "garage",
+            "state": "locked"
+        }
+    },
+    {
+        "query": "open up the side door to the garage",
+        "function": "CONTROL_DOOR_LOCK",
+        "params": {
+            "door": "garage",
+            "state": "unlocked"
+        },
+        "slots": {
+            "door": "garage",
+            "state": "unlocked"
+        }
+    },
+    {
+        "query": "secure the front porch before we leave",
+        "function": "CONTROL_DOOR_LOCK",
+        "params": {
+            "door": "front_door",
+            "state": "locked"
+        },
+        "slots": {
+            "door": "front_door",
+            "state": "locked"
+        }
+    },
+    {
+        "query": "unlock the front door guests are arriving",
+        "function": "CONTROL_DOOR_LOCK",
+        "params": {
+            "door": "front_door",
+            "state": "unlocked"
+        },
+        "slots": {
+            "door": "front_door",
+            "state": "unlocked"
+        }
+    },
+    {
+        "query": "bolt the back door before sleeping",
+        "function": "CONTROL_DOOR_LOCK",
+        "params": {
+            "door": "back_door",
+            "state": "locked"
+        },
+        "slots": {
+            "door": "back_door",
+            "state": "locked"
+        }
+    },
+    {
+        "query": "unlatch the patio door for the barbecue",
+        "function": "CONTROL_DOOR_LOCK",
+        "params": {
+            "door": "back_door",
+            "state": "unlocked"
+        },
+        "slots": {
+            "door": "back_door",
+            "state": "unlocked"
+        }
+    },
+    {
+        "query": "make sure the car port is locked up",
+        "function": "CONTROL_DOOR_LOCK",
+        "params": {
+            "door": "garage",
+            "state": "locked"
+        },
+        "slots": {
+            "door": "garage",
+            "state": "locked"
+        }
+    },
+    {
+        "query": "unlock the auto garage we just pulled up",
+        "function": "CONTROL_DOOR_LOCK",
+        "params": {
+            "door": "garage",
+            "state": "unlocked"
+        },
+        "slots": {
+            "door": "garage",
+            "state": "unlocked"
+        }
+    },
+    {
+        "query": "lock the main entrance securely",
+        "function": "CONTROL_DOOR_LOCK",
+        "params": {
+            "door": "front_door",
+            "state": "locked"
+        },
+        "slots": {
+            "door": "front_door",
+            "state": "locked"
+        }
+    },
+    {
+        "query": "open the front door i forgot my keys",
+        "function": "CONTROL_DOOR_LOCK",
+        "params": {
+            "door": "front_door",
+            "state": "unlocked"
+        },
+        "slots": {
+            "door": "front_door",
+            "state": "unlocked"
+        }
+    },
+    {
+        "query": "set the living room to 72 degrees",
+        "function": "SET_TEMPERATURE",
+        "params": {
+            "room": "living_room",
+            "temperature": 72
+        },
+        "slots": {
+            "room": "living_room",
+            "temperature": 72
+        }
+    },
+    {
+        "query": "make the lounge 68 degrees",
+        "function": "SET_TEMPERATURE",
+        "params": {
+            "room": "living_room",
+            "temperature": 68
+        },
+        "slots": {
+            "room": "living_room",
+            "temperature": 68
+        }
+    },
+    {
+        "query": "adjust the sofa area to 70",
+        "function": "SET_TEMPERATURE",
+        "params": {
+            "room": "living_room",
+            "temperature": 70
+        },
+        "slots": {
+            "room": "living_room",
+            "temperature": 70
+        }
+    },
+    {
+        "query": "living room thermostat to 22 celsius",
+        "function": "SET_TEMPERATURE",
+        "params": {
+            "room": "living_room",
+            "temperature": 22
+        },
+        "slots": {
+            "room": "living_room",
+            "temperature": 22
+        }
+    },
+    {
+        "query": "set the temperature to 65 in the living room",
+        "function": "SET_TEMPERATURE",
+        "params": {
+            "room": "living_room",
+            "temperature": 65
+        },
+        "slots": {
+            "room": "living_room",
+            "temperature": 65
+        }
+    },
+    {
+        "query": "cool the living room down to 60",
+        "function": "SET_TEMPERATURE",
+        "params": {
+            "room": "living_room",
+            "temperature": 60
+        },
+        "slots": {
+            "room": "living_room",
+            "temperature": 60
+        }
+    },
+    {
+        "query": "warm up the lounge to 75",
+        "function": "SET_TEMPERATURE",
+        "params": {
+            "room": "living_room",
+            "temperature": 75
+        },
+        "slots": {
+            "room": "living_room",
+            "temperature": 75
+        }
+    },
+    {
+        "query": "living room to 71 degrees please",
+        "function": "SET_TEMPERATURE",
+        "params": {
+            "room": "living_room",
+            "temperature": 71
+        },
+        "slots": {
+            "room": "living_room",
+            "temperature": 71
+        }
+    },
+    {
+        "query": "set the couch area to 69",
+        "function": "SET_TEMPERATURE",
+        "params": {
+            "room": "living_room",
+            "temperature": 69
+        },
+        "slots": {
+            "room": "living_room",
+            "temperature": 69
+        }
+    },
+    {
+        "query": "make it 73 degrees in the lounge",
+        "function": "SET_TEMPERATURE",
+        "params": {
+            "room": "living_room",
+            "temperature": 73
+        },
+        "slots": {
+            "room": "living_room",
+            "temperature": 73
+        }
+    },
+    {
+        "query": "set the bedroom to 64 for sleeping",
+        "function": "SET_TEMPERATURE",
+        "params": {
+            "room": "bedroom",
+            "temperature": 64
+        },
+        "slots": {
+            "room": "bedroom",
+            "temperature": 64
+        }
+    },
+    {
+        "query": "drop the bedroom temp to 62",
+        "function": "SET_TEMPERATURE",
+        "params": {
+            "room": "bedroom",
+            "temperature": 62
+        },
+        "slots": {
+            "room": "bedroom",
+            "temperature": 62
+        }
+    },
+    {
+        "query": "make it 68 degrees where i sleep",
+        "function": "SET_TEMPERATURE",
+        "params": {
+            "room": "bedroom",
+            "temperature": 68
+        },
+        "slots": {
+            "room": "bedroom",
+            "temperature": 68
+        }
+    },
+    {
+        "query": "bedroom thermostat to 20",
+        "function": "SET_TEMPERATURE",
+        "params": {
+            "room": "bedroom",
+            "temperature": 20
+        },
+        "slots": {
+            "room": "bedroom",
+            "temperature": 20
+        }
+    },
+    {
+        "query": "warm the bedroom to 72",
+        "function": "SET_TEMPERATURE",
+        "params": {
+            "room": "bedroom",
+            "temperature": 72
+        },
+        "slots": {
+            "room": "bedroom",
+            "temperature": 72
+        }
+    },
+    {
+        "query": "set the temperature to 65 while i am sleeping",
+        "function": "SET_TEMPERATURE",
+        "params": {
+            "room": "bedroom",
+            "temperature": 65
+        },
+        "slots": {
+            "room": "bedroom",
+            "temperature": 65
+        }
+    },
+    {
+        "query": "heat the bedroom up to 74",
+        "function": "SET_TEMPERATURE",
+        "params": {
+            "room": "bedroom",
+            "temperature": 74
+        },
+        "slots": {
+            "room": "bedroom",
+            "temperature": 74
+        }
+    },
+    {
+        "query": "bedroom to 67 degrees",
+        "function": "SET_TEMPERATURE",
+        "params": {
+            "room": "bedroom",
+            "temperature": 67
+        },
+        "slots": {
+            "room": "bedroom",
+            "temperature": 67
+        }
+    },
+    {
+        "query": "set sleeping area to 66",
+        "function": "SET_TEMPERATURE",
+        "params": {
+            "room": "bedroom",
+            "temperature": 66
+        },
+        "slots": {
+            "room": "bedroom",
+            "temperature": 66
+        }
+    },
+    {
+        "query": "change bedroom to 21 celsius",
+        "function": "SET_TEMPERATURE",
+        "params": {
+            "room": "bedroom",
+            "temperature": 21
+        },
+        "slots": {
+            "room": "bedroom",
+            "temperature": 21
+        }
+    },
+    {
+        "query": "set the kitchen to 68",
+        "function": "SET_TEMPERATURE",
+        "params": {
+            "room": "kitchen",
+            "temperature": 68
+        },
+        "slots": {
+            "room": "kitchen",
+            "temperature": 68
+        }
+    },
+    {
+        "query": "make the kitchen 70 degrees while cooking",
+        "function": "SET_TEMPERATURE",
+        "params": {
+            "room": "kitchen",
+            "temperature": 70
+        },
+        "slots": {
+            "room": "kitchen",
+            "temperature": 70
+        }
+    },
+    {
+        "query": "cool the kitchen to 65",
+        "function": "SET_TEMPERATURE",
+        "params": {
+            "room": "kitchen",
+            "temperature": 65
+        },
+        "slots": {
+            "room": "kitchen",
+            "temperature": 65
+        }
+    },
+    {
+        "query": "kitchen thermostat 72",
+        "function": "SET_TEMPERATURE",
+        "params": {
+            "room": "kitchen",
+            "temperature": 72
+        },
+        "slots": {
+            "room": "kitchen",
+            "temperature": 72
+        }
+    },
+    {
+        "query": "set cooking area to 66",
+        "function": "SET_TEMPERATURE",
+        "params": {
+            "room": "kitchen",
+            "temperature": 66
+        },
+        "slots": {
+            "room": "kitchen",
+            "temperature": 66
+        }
+    },
+    {
+        "query": "make it 69 degrees in the kitchen",
+        "function": "SET_TEMPERATURE",
+        "params": {
+            "room": "kitchen",
+            "temperature": 69
+        },
+        "slots": {
+            "room": "kitchen",
+            "temperature": 69
+        }
+    },
+    {
+        "query": "drop the kitchen temp to 64 degrees",
+        "function": "SET_TEMPERATURE",
+        "params": {
+            "room": "kitchen",
+            "temperature": 64
+        },
+        "slots": {
+            "room": "kitchen",
+            "temperature": 64
+        }
+    },
+    {
+        "query": "warm the kitchen to 71",
+        "function": "SET_TEMPERATURE",
+        "params": {
+            "room": "kitchen",
+            "temperature": 71
+        },
+        "slots": {
+            "room": "kitchen",
+            "temperature": 71
+        }
+    },
+    {
+        "query": "set temperature to 23 celsius while making food",
+        "function": "SET_TEMPERATURE",
+        "params": {
+            "room": "kitchen",
+            "temperature": 23
+        },
+        "slots": {
+            "room": "kitchen",
+            "temperature": 23
+        }
+    },
+    {
+        "query": "kitchen to 67 please",
+        "function": "SET_TEMPERATURE",
+        "params": {
+            "room": "kitchen",
+            "temperature": 67
+        },
+        "slots": {
+            "room": "kitchen",
+            "temperature": 67
+        }
+    },
+    {
+        "query": "set the office to 72",
+        "function": "SET_TEMPERATURE",
+        "params": {
+            "room": "office",
+            "temperature": 72
+        },
+        "slots": {
+            "room": "office",
+            "temperature": 72
+        }
+    },
+    {
+        "query": "working temperature to 70",
+        "function": "SET_TEMPERATURE",
+        "params": {
+            "room": "office",
+            "temperature": 70
+        },
+        "slots": {
+            "room": "office",
+            "temperature": 70
+        }
+    },
+    {
+        "query": "make the office 68 degrees",
+        "function": "SET_TEMPERATURE",
+        "params": {
+            "room": "office",
+            "temperature": 68
+        },
+        "slots": {
+            "room": "office",
+            "temperature": 68
+        }
+    },
+    {
+        "query": "heat the office to 75 while i am working",
+        "function": "SET_TEMPERATURE",
+        "params": {
+            "room": "office",
+            "temperature": 75
+        },
+        "slots": {
+            "room": "office",
+            "temperature": 75
+        }
+    },
+    {
+        "query": "cool the office down to 66",
+        "function": "SET_TEMPERATURE",
+        "params": {
+            "room": "office",
+            "temperature": 66
+        },
+        "slots": {
+            "room": "office",
+            "temperature": 66
+        }
+    },
+    {
+        "query": "office thermostat to 22",
+        "function": "SET_TEMPERATURE",
+        "params": {
+            "room": "office",
+            "temperature": 22
+        },
+        "slots": {
+            "room": "office",
+            "temperature": 22
+        }
+    },
+    {
+        "query": "change office temp to 69",
+        "function": "SET_TEMPERATURE",
+        "params": {
+            "room": "office",
+            "temperature": 69
+        },
+        "slots": {
+            "room": "office",
+            "temperature": 69
+        }
+    },
+    {
+        "query": "set the temperature to 71 in the office",
+        "function": "SET_TEMPERATURE",
+        "params": {
+            "room": "office",
+            "temperature": 71
+        },
+        "slots": {
+            "room": "office",
+            "temperature": 71
+        }
+    },
+    {
+        "query": "office to 73 degrees",
+        "function": "SET_TEMPERATURE",
+        "params": {
+            "room": "office",
+            "temperature": 73
+        },
+        "slots": {
+            "room": "office",
+            "temperature": 73
+        }
+    },
+    {
+        "query": "make it 67 degrees at my desk",
+        "function": "SET_TEMPERATURE",
+        "params": {
+            "room": "office",
+            "temperature": 67
+        },
+        "slots": {
+            "room": "office",
+            "temperature": 67
+        }
+    },
+    {
+        "query": "set the whole house to 70 degrees",
+        "function": "SET_TEMPERATURE",
+        "params": {
+            "room": "entire_house",
+            "temperature": 70
+        },
+        "slots": {
+            "room": "entire_house",
+            "temperature": 70
+        }
+    },
+    {
+        "query": "central heating to 72",
+        "function": "SET_TEMPERATURE",
+        "params": {
+            "room": "entire_house",
+            "temperature": 72
+        },
+        "slots": {
+            "room": "entire_house",
+            "temperature": 72
+        }
+    },
+    {
+        "query": "make it 68 everywhere",
+        "function": "SET_TEMPERATURE",
+        "params": {
+            "room": "entire_house",
+            "temperature": 68
+        },
+        "slots": {
+            "room": "entire_house",
+            "temperature": 68
+        }
+    },
+    {
+        "query": "thermostat to 71",
+        "function": "SET_TEMPERATURE",
+        "params": {
+            "room": "entire_house",
+            "temperature": 71
+        },
+        "slots": {
+            "room": "entire_house",
+            "temperature": 71
+        }
+    },
+    {
+        "query": "set all rooms to 69 degrees",
+        "function": "SET_TEMPERATURE",
+        "params": {
+            "room": "entire_house",
+            "temperature": 69
+        },
+        "slots": {
+            "room": "entire_house",
+            "temperature": 69
+        }
+    },
+    {
+        "query": "entire house to 74",
+        "function": "SET_TEMPERATURE",
+        "params": {
+            "room": "entire_house",
+            "temperature": 74
+        },
+        "slots": {
+            "room": "entire_house",
+            "temperature": 74
+        }
+    },
+    {
+        "query": "change the hvac system to 65",
+        "function": "SET_TEMPERATURE",
+        "params": {
+            "room": "entire_house",
+            "temperature": 65
+        },
+        "slots": {
+            "room": "entire_house",
+            "temperature": 65
+        }
+    },
+    {
+        "query": "set the house temperature to 22 celsius",
+        "function": "SET_TEMPERATURE",
+        "params": {
+            "room": "entire_house",
+            "temperature": 22
+        },
+        "slots": {
+            "room": "entire_house",
+            "temperature": 22
+        }
+    },
+    {
+        "query": "warm up the whole house to 73",
+        "function": "SET_TEMPERATURE",
+        "params": {
+            "room": "entire_house",
+            "temperature": 73
+        },
+        "slots": {
+            "room": "entire_house",
+            "temperature": 73
+        }
+    },
+    {
+        "query": "cool everywhere down to 67",
+        "function": "SET_TEMPERATURE",
+        "params": {
+            "room": "entire_house",
+            "temperature": 67
+        },
+        "slots": {
+            "room": "entire_house",
+            "temperature": 67
+        }
+    },
+    {
+        "query": "open the living room blinds",
+        "function": "CONTROL_BLINDS",
+        "params": {
+            "room": "living_room",
+            "state": "open"
+        },
+        "slots": {
+            "room": "living_room",
+            "state": "open"
+        }
+    },
+    {
+        "query": "raise the shades in the living room",
+        "function": "CONTROL_BLINDS",
+        "params": {
+            "room": "living_room",
+            "state": "open"
+        },
+        "slots": {
+            "room": "living_room",
+            "state": "open"
+        }
+    },
+    {
+        "query": "let some light into the lounge",
+        "function": "CONTROL_BLINDS",
+        "params": {
+            "room": "living_room",
+            "state": "open"
+        },
+        "slots": {
+            "room": "living_room",
+            "state": "open"
+        }
+    },
+    {
+        "query": "uncover the windows in the living room",
+        "function": "CONTROL_BLINDS",
+        "params": {
+            "room": "living_room",
+            "state": "open"
+        },
+        "slots": {
+            "room": "living_room",
+            "state": "open"
+        }
+    },
+    {
+        "query": "it is a beautiful morning open the living room blinds",
+        "function": "CONTROL_BLINDS",
+        "params": {
+            "room": "living_room",
+            "state": "open"
+        },
+        "slots": {
+            "room": "living_room",
+            "state": "open"
+        }
+    },
+    {
+        "query": "want to see outside from the sofa",
+        "function": "CONTROL_BLINDS",
+        "params": {
+            "room": "living_room",
+            "state": "open"
+        },
+        "slots": {
+            "room": "living_room",
+            "state": "open"
+        }
+    },
+    {
+        "query": "let the sunlight into the living room",
+        "function": "CONTROL_BLINDS",
+        "params": {
+            "room": "living_room",
+            "state": "open"
+        },
+        "slots": {
+            "room": "living_room",
+            "state": "open"
+        }
+    },
+    {
+        "query": "raise the living room shades",
+        "function": "CONTROL_BLINDS",
+        "params": {
+            "room": "living_room",
+            "state": "open"
+        },
+        "slots": {
+            "room": "living_room",
+            "state": "open"
+        }
+    },
+    {
+        "query": "close the living room blinds",
+        "function": "CONTROL_BLINDS",
+        "params": {
+            "room": "living_room",
+            "state": "closed"
+        },
+        "slots": {
+            "room": "living_room",
+            "state": "closed"
+        }
+    },
+    {
+        "query": "shut the shades in the lounge",
+        "function": "CONTROL_BLINDS",
+        "params": {
+            "room": "living_room",
+            "state": "closed"
+        },
+        "slots": {
+            "room": "living_room",
+            "state": "closed"
+        }
+    },
+    {
+        "query": "lower the living room blinds",
+        "function": "CONTROL_BLINDS",
+        "params": {
+            "room": "living_room",
+            "state": "closed"
+        },
+        "slots": {
+            "room": "living_room",
+            "state": "closed"
+        }
+    },
+    {
+        "query": "too bright in the living room close them",
+        "function": "CONTROL_BLINDS",
+        "params": {
+            "room": "living_room",
+            "state": "closed"
+        },
+        "slots": {
+            "room": "living_room",
+            "state": "closed"
+        }
+    },
+    {
+        "query": "block out the sun in the living room",
+        "function": "CONTROL_BLINDS",
+        "params": {
+            "room": "living_room",
+            "state": "closed"
+        },
+        "slots": {
+            "room": "living_room",
+            "state": "closed"
+        }
+    },
+    {
+        "query": "there is a glare on the tv lower the shades",
+        "function": "CONTROL_BLINDS",
+        "params": {
+            "room": "living_room",
+            "state": "closed"
+        },
+        "slots": {
+            "room": "living_room",
+            "state": "closed"
+        }
+    },
+    {
+        "query": "need privacy in the lounge",
+        "function": "CONTROL_BLINDS",
+        "params": {
+            "room": "living_room",
+            "state": "closed"
+        },
+        "slots": {
+            "room": "living_room",
+            "state": "closed"
+        }
+    },
+    {
+        "query": "it is nighttime shut the living room windows",
+        "function": "CONTROL_BLINDS",
+        "params": {
+            "room": "living_room",
+            "state": "closed"
+        },
+        "slots": {
+            "room": "living_room",
+            "state": "closed"
+        }
+    },
+    {
+        "query": "open the bedroom blinds",
+        "function": "CONTROL_BLINDS",
+        "params": {
+            "room": "bedroom",
+            "state": "open"
+        },
+        "slots": {
+            "room": "bedroom",
+            "state": "open"
+        }
+    },
+    {
+        "query": "raise the shades in the bedroom",
+        "function": "CONTROL_BLINDS",
+        "params": {
+            "room": "bedroom",
+            "state": "open"
+        },
+        "slots": {
+            "room": "bedroom",
+            "state": "open"
+        }
+    },
+    {
+        "query": "let light in where i sleep",
+        "function": "CONTROL_BLINDS",
+        "params": {
+            "room": "bedroom",
+            "state": "open"
+        },
+        "slots": {
+            "room": "bedroom",
+            "state": "open"
+        }
+    },
+    {
+        "query": "morning time open the bedroom windows",
+        "function": "CONTROL_BLINDS",
+        "params": {
+            "room": "bedroom",
+            "state": "open"
+        },
+        "slots": {
+            "room": "bedroom",
+            "state": "open"
+        }
+    },
+    {
+        "query": "let the sunlight into the bedroom",
+        "function": "CONTROL_BLINDS",
+        "params": {
+            "room": "bedroom",
+            "state": "open"
+        },
+        "slots": {
+            "room": "bedroom",
+            "state": "open"
+        }
+    },
+    {
+        "query": "bright outside uncover the bedroom shades",
+        "function": "CONTROL_BLINDS",
+        "params": {
+            "room": "bedroom",
+            "state": "open"
+        },
+        "slots": {
+            "room": "bedroom",
+            "state": "open"
+        }
+    },
+    {
+        "query": "raise the bedroom blinds",
+        "function": "CONTROL_BLINDS",
+        "params": {
+            "room": "bedroom",
+            "state": "open"
+        },
+        "slots": {
+            "room": "bedroom",
+            "state": "open"
+        }
+    },
+    {
+        "query": "open up the shades in the sleeping area",
+        "function": "CONTROL_BLINDS",
+        "params": {
+            "room": "bedroom",
+            "state": "open"
+        },
+        "slots": {
+            "room": "bedroom",
+            "state": "open"
+        }
+    },
+    {
+        "query": "close the bedroom blinds",
+        "function": "CONTROL_BLINDS",
+        "params": {
+            "room": "bedroom",
+            "state": "closed"
+        },
+        "slots": {
+            "room": "bedroom",
+            "state": "closed"
+        }
+    },
+    {
+        "query": "shut the shades where i am sleeping",
+        "function": "CONTROL_BLINDS",
+        "params": {
+            "room": "bedroom",
+            "state": "closed"
+        },
+        "slots": {
+            "room": "bedroom",
+            "state": "closed"
+        }
+    },
+    {
+        "query": "lower the bedroom blinds",
+        "function": "CONTROL_BLINDS",
+        "params": {
+            "room": "bedroom",
+            "state": "closed"
+        },
+        "slots": {
+            "room": "bedroom",
+            "state": "closed"
+        }
+    },
+    {
+        "query": "block out the sun i am trying to sleep",
+        "function": "CONTROL_BLINDS",
+        "params": {
+            "room": "bedroom",
+            "state": "closed"
+        },
+        "slots": {
+            "room": "bedroom",
+            "state": "closed"
+        }
+    },
+    {
+        "query": "too bright in the bedroom close the shades",
+        "function": "CONTROL_BLINDS",
+        "params": {
+            "room": "bedroom",
+            "state": "closed"
+        },
+        "slots": {
+            "room": "bedroom",
+            "state": "closed"
+        }
+    },
+    {
+        "query": "need privacy in the bedroom",
+        "function": "CONTROL_BLINDS",
+        "params": {
+            "room": "bedroom",
+            "state": "closed"
+        },
+        "slots": {
+            "room": "bedroom",
+            "state": "closed"
+        }
+    },
+    {
+        "query": "it is dark out shut the bedroom blinds",
+        "function": "CONTROL_BLINDS",
+        "params": {
+            "room": "bedroom",
+            "state": "closed"
+        },
+        "slots": {
+            "room": "bedroom",
+            "state": "closed"
+        }
+    },
+    {
+        "query": "close the bedroom shades for nighttime",
+        "function": "CONTROL_BLINDS",
+        "params": {
+            "room": "bedroom",
+            "state": "closed"
+        },
+        "slots": {
+            "room": "bedroom",
+            "state": "closed"
+        }
+    },
+    {
+        "query": "lower the blinds in the bedroom",
+        "function": "CONTROL_BLINDS",
+        "params": {
+            "room": "bedroom",
+            "state": "closed"
+        },
+        "slots": {
+            "room": "bedroom",
+            "state": "closed"
+        }
+    },
+    {
+        "query": "open the office blinds",
+        "function": "CONTROL_BLINDS",
+        "params": {
+            "room": "office",
+            "state": "open"
+        },
+        "slots": {
+            "room": "office",
+            "state": "open"
+        }
+    },
+    {
+        "query": "raise the shades in the office",
+        "function": "CONTROL_BLINDS",
+        "params": {
+            "room": "office",
+            "state": "open"
+        },
+        "slots": {
+            "room": "office",
+            "state": "open"
+        }
+    },
+    {
+        "query": "let some sunlight into the office",
+        "function": "CONTROL_BLINDS",
+        "params": {
+            "room": "office",
+            "state": "open"
+        },
+        "slots": {
+            "room": "office",
+            "state": "open"
+        }
+    },
+    {
+        "query": "uncover the windows while i am working",
+        "function": "CONTROL_BLINDS",
+        "params": {
+            "room": "office",
+            "state": "open"
+        },
+        "slots": {
+            "room": "office",
+            "state": "open"
+        }
+    },
+    {
+        "query": "want to see outside from my desk",
+        "function": "CONTROL_BLINDS",
+        "params": {
+            "room": "office",
+            "state": "open"
+        },
+        "slots": {
+            "room": "office",
+            "state": "open"
+        }
+    },
+    {
+        "query": "it is morning open the office shades",
+        "function": "CONTROL_BLINDS",
+        "params": {
+            "room": "office",
+            "state": "open"
+        },
+        "slots": {
+            "room": "office",
+            "state": "open"
+        }
+    },
+    {
+        "query": "raise the blinds in the office",
+        "function": "CONTROL_BLINDS",
+        "params": {
+            "room": "office",
+            "state": "open"
+        },
+        "slots": {
+            "room": "office",
+            "state": "open"
+        }
+    },
+    {
+        "query": "let light in the office",
+        "function": "CONTROL_BLINDS",
+        "params": {
+            "room": "office",
+            "state": "open"
+        },
+        "slots": {
+            "room": "office",
+            "state": "open"
+        }
+    },
+    {
+        "query": "close the office blinds",
+        "function": "CONTROL_BLINDS",
+        "params": {
+            "room": "office",
+            "state": "closed"
+        },
+        "slots": {
+            "room": "office",
+            "state": "closed"
+        }
+    },
+    {
+        "query": "shut the shades in the office",
+        "function": "CONTROL_BLINDS",
+        "params": {
+            "room": "office",
+            "state": "closed"
+        },
+        "slots": {
+            "room": "office",
+            "state": "closed"
+        }
+    },
+    {
+        "query": "lower the office blinds",
+        "function": "CONTROL_BLINDS",
+        "params": {
+            "room": "office",
+            "state": "closed"
+        },
+        "slots": {
+            "room": "office",
+            "state": "closed"
+        }
+    },
+    {
+        "query": "the glare on my monitor is bad lower the shades",
+        "function": "CONTROL_BLINDS",
+        "params": {
+            "room": "office",
+            "state": "closed"
+        },
+        "slots": {
+            "room": "office",
+            "state": "closed"
+        }
+    },
+    {
+        "query": "too bright while working close the blinds",
+        "function": "CONTROL_BLINDS",
+        "params": {
+            "room": "office",
+            "state": "closed"
+        },
+        "slots": {
+            "room": "office",
+            "state": "closed"
+        }
+    },
+    {
+        "query": "block out the sun in the office",
+        "function": "CONTROL_BLINDS",
+        "params": {
+            "room": "office",
+            "state": "closed"
+        },
+        "slots": {
+            "room": "office",
+            "state": "closed"
+        }
+    },
+    {
+        "query": "shut the office shades for privacy",
+        "function": "CONTROL_BLINDS",
+        "params": {
+            "room": "office",
+            "state": "closed"
+        },
+        "slots": {
+            "room": "office",
+            "state": "closed"
+        }
+    },
+    {
+        "query": "it is nighttime close the office blinds",
+        "function": "CONTROL_BLINDS",
+        "params": {
+            "room": "office",
+            "state": "closed"
+        },
+        "slots": {
+            "room": "office",
+            "state": "closed"
+        }
+    },
+    {
+        "query": "lower the shades at my desk",
+        "function": "CONTROL_BLINDS",
+        "params": {
+            "room": "office",
+            "state": "closed"
+        },
+        "slots": {
+            "room": "office",
+            "state": "closed"
+        }
+    }
+]

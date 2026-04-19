@@ -272,7 +272,7 @@
 
     
     <div class="api-wrap fade d4">
-      <p class="api-label">Smart Home API — 3 functions</p>
+      <p class="api-label">Smart Home API — 6 functions</p>
       <div class="fn-list" id="fnList"></div>
     </div>
 
@@ -469,12 +469,9 @@
     const BIO_TAGS = routesData.bio_tags || ['O'];
 
     const CHIPS = [
-      'the lights in the living room are too dim',
-      'the room is hot and the fan doesn\'t work',
-      'play me some trendy music',
-      'set a 10 minute timer',
-      'start the ac in the office',
-      'activate bedroom lights',
+      'it is getting pitch black in the living room',
+      'i need some deep focus background music at my desk',
+      'remind me to check the pasta in twelve and a half minutes',
     ];
     routes.forEach((route, idx) => {
       const shortDesc = route.description.split(/\. /)[0];
@@ -598,6 +595,15 @@
       SET_TIMER({ duration }) {
         return `set_timer(${duration ?? 5})`;
       },
+      CONTROL_DOOR_LOCK({ door, state }) {
+        return `control_door_lock("${door}", "${state}")`;
+      },
+      SET_TEMPERATURE({ room, temperature }) {
+        return `set_temperature("${room}", ${temperature})`;
+      },
+      CONTROL_BLINDS({ room, state }) {
+        return `control_blinds("${room}", "${state}")`;
+      },
     };
 
     window.doRoute = async function() {
@@ -639,19 +645,12 @@
     };
 
     const RANDOM_EXAMPLES = [
-      'the lights in the living room are too dim',
-      'the room is hot and the fan doesn\'t work',
-      'play me some trendy music',
-      'kill the fan in the office',
-      'play jazz in the kitchen',
-      'set a 10 minute timer',
-      'activate bedroom lights',
-      'start the ac',
-      'turn off the tv',
-      'chill classical music in the bedroom',
-      '5 minute egg timer',
-      'shut down the bedroom fan',
-      'switch on office lights',
+      "it is getting pitch black in the living room",
+      "i need some deep focus background music at my desk",
+      "remind me to check the pasta in twelve and a half minutes",
+      "i am leaving the house make sure the main entrance is secure",
+      "change the central heating to 68 degrees",
+      "the glare on my monitor is terrible right now"
     ];
     let _ex = 0;
     window.doRandom = function() {
