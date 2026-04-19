@@ -16,9 +16,9 @@ Built on `all-MiniLM-L6-v2` (22 MB).
 
 ## Smart Home Benchmark
 
-**32 hand-crafted natural language queries · 3 functions · 6 enum parameters**
+**32 hand-crafted natural language queries · 6 functions · 10 enum parameters**
 
-Both models trained on identical data (45 programmatic examples). Evaluated on unseen natural language phrases.
+Both models trained on identical data (300 hand-crafted examples). Evaluated on unseen natural language phrases.
 
 | Model | Fn% | Latency | Train | Size |
 |---|---|---|---|---|
