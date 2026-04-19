@@ -583,7 +583,7 @@
             const s = maxsim(q.toks, q.seqLen, tokMat);
             if (s > bestScore) { bestScore = s; bestVal = v; }
           }
-          if (!pdef.lexical || bestScore >= 0.40) {
+          if (!pdef.lexical || bestScore >= 0.30) {
             best = bestVal;
           }
         }
@@ -607,7 +607,7 @@
         return `set_timer(${duration ?? 5})`;
       },
       CONTROL_DOOR_LOCK({ door, state }) {
-        return `control_door_lock("${door}", "${state}")`;
+        return `control_door_lock("${door ?? 'front_door'}", "${state}")`;
       },
       SET_TEMPERATURE({ room, temperature }) {
         return `set_temperature("${room}", ${temperature})`;
