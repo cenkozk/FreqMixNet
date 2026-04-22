@@ -16,7 +16,7 @@
             "heater"
           ],
           "value_descriptions": {
-            "lights": "lights are off too dark cannot see dim room visibility poor pitch black need light lamp bulb ceiling gloomy bright glare hurting eyes",
+            "lights": "lights lamp bulb ceiling too dark dim room gloomy cannot see pitch black need light visibility poor",
             "fan": "fan spinning cold draft blowing chilly freezing from fan too hot stuffy need air circulation ventilation ceiling fan noise bothering humming",
             "tv": "tv screen television watching show movie playing display telly program entertainment something to watch picture on",
             "ac": "air conditioning temperature too high sweating hot room humid heat uncomfortable climate too warm need cooling air conditioner hvac",
@@ -48,8 +48,8 @@
             "off"
           ],
           "value_descriptions": {
-            "on": "turn on switch on start activate enable launch open power on — too dark too hot stuffy need it want it need heat device required feels uncomfortable",
-            "off": "turn off switch off shut down stop disable kill deactivate close shut off end — too cold bothering me too loud annoying drafty freezing going to sleep done with it quiet please stop it not needed"
+            "on": "turn on switch on start activate enable launch open power on \u2014 too dark too hot stuffy need it want it need heat required feels uncomfortable",
+            "off": "turn off switch off shut down stop disable kill deactivate close shut off end \u2014 too bright glare hurting eyes too loud annoying drafty going to sleep done with it quiet please stop not needed"
           }
         }
       }

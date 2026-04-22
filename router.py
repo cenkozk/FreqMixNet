@@ -1002,7 +1002,7 @@ def cmd_train(args):
     extra: list = []
     if args.examples:
         for path in args.examples:
-            with open(path) as f:
+            with open(path, encoding='utf-8') as f:
                 raw = json.load(f)
             if isinstance(raw, dict):
                 raw = raw.get('train', []) + raw.get('examples', [])
